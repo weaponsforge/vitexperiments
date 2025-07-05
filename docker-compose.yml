@@ -1,0 +1,22 @@
+services:
+  weaponsforge.vitexperiments:
+    container_name: weaponsforge-vitexperiments
+    image: weaponsforge/vitexperiments:latest
+    env_file:
+      - ./app-react/.env
+    build:
+      context: ./app-react
+      dockerfile: Dockerfile
+      target: development
+    networks:
+      - weaponsforge-vitexperiments
+    volumes:
+      - ./app-react/:/opt/app
+      - /opt/app/node_modules
+    ports:
+      - "3000:3000"
+
+networks:
+  weaponsforge-vitexperiments:
+    name: weaponsforge-vitexperiments
+    external: false
