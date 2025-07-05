@@ -3,15 +3,15 @@ services:
     container_name: weaponsforge-vitexperiments
     image: weaponsforge/vitexperiments:latest
     env_file:
-      - ./app-react/.env
+      - ./app/.env
     build:
-      context: ./app-react
+      context: ./app
       dockerfile: Dockerfile
       target: development
     networks:
       - weaponsforge-vitexperiments
     volumes:
-      - ./app-react/:/opt/app
+      - ./app/:/opt/app
       - /opt/app/node_modules
     ports:
       - "3000:3000"
