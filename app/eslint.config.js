@@ -23,6 +23,20 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'no-unused-vars': 'off',
+      'no-undef': 'error',
+      'no-trailing-spaces': 'error',
+      '@typescript-eslint/no-unused-vars': ['error'],
+      'indent': ['error', 2],
+      'linebreak-style': ['error', 'unix'],
+      'quotes': ['error', 'double'],
+      'semi': ['error', 'never'],
+      'comma-dangle': ['error', 'never'],
+      'object-curly-spacing': ['error', 'always'],
+      'eol-last': ['error', 'always'],
+      'no-restricted-imports': [
+        'error', { 'patterns': ['@/features/*/*'] }
+      ]
     },
   },
 )

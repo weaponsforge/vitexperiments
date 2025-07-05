@@ -7,7 +7,8 @@
     "dev": "vite",
     "dev:docker": "vite --port=3000 --host",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "preview": "vite preview"
   },
   "dependencies": {
