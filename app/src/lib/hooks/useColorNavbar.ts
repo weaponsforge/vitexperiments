@@ -7,7 +7,7 @@ import routes from "@/routes"
 const defaultColorBg = "purple-100"
 
 const useColorNavBar = () => {
-  const [colorBg, setColorBg] = useState()
+  const [colorBg, setColorBg] = useState<string | null>()
   const [selectedItem, setSelectedItem] = useState(routes[0].name)
   const location = useLocation()
 

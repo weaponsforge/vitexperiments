@@ -1,20 +1,20 @@
 @font-face {
   font-family: "CalSans";
-  src: url("../src/assets/fonts/CalSans-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/CalSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../src/assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "InterVariable";
-  src: url("../src/assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("../assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
