@@ -1,15 +1,15 @@
 import Section from "@/components/layout/Section"
 
-const Contact = () => {
+const Border = () => {
   return (
     <Section>
-      <h1>Contact</h1>
+      <h1>Login</h1>
 
       <p className="my-2 font-inter font-light">
-        This is the Contact page
+        This is the Login page
       </p>
     </Section>
   )
 }
 
-export default Contact
+export default Border

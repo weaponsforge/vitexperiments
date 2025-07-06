@@ -3,7 +3,8 @@ import { ComponentType } from "react"
 import {
   About,
   Contact,
-  Home
+  Home,
+  Login
 } from "@/features"
 
 type RouteItem = {
@@ -26,6 +27,13 @@ const routes: RouteItem[] = [
     color: "from-teal-100 to-cyan-200",
     isNavVisible: true,
     component: About
+  },
+  {
+    path: "/Login",
+    name: "Login",
+    color: "from-blue-100 to-indigo-200",
+    isNavVisible: true,
+    component: Login
   },
   {
     path: "/contact",

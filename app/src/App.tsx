@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import ColorNavBar from "@/components/layout/ColorNavBar"
+import ColorNavBar from "@/components/ui/ColorNavBar"
 import routes from "@/routes"
 
 const App = () => {

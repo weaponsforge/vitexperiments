@@ -1,9 +1,11 @@
 import About from "./About/About"
+import Login from "./Auth/Login"
 import Contact from "./Contact/Contact"
 import Home from "./Home/Home"
 
 export {
   About,
   Contact,
-  Home
+  Home,
+  Login
 }

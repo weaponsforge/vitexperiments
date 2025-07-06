@@ -4,7 +4,10 @@ const Home = () => {
   return (
     <Section>
       <h1>Home</h1>
-      <h4>This is the Home page</h4>
+
+      <p className="my-2 font-inter font-light">
+        This is the Home page
+      </p>
     </Section>
   )
 }
