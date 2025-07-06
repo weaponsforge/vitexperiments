@@ -10,7 +10,8 @@ interface ISection {
 
 const Section = (props: ISection) => {
   const stylesSection = cn(
-    "max-w-screen-lg min-h-75 p-4 mx-auto border border-stone-200 rounded-xl", props?.className
+    "max-w-screen-lg min-h-75 w-full p-4 mx-auto text-justify border border-stone-200 rounded-xl",
+    props?.className
   )
 
   return (

@@ -1,20 +1,21 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import ColorNavBar from "@/components/ui/ColorNavBar"
+
+import FullPage from "@/components/layout/FullPage"
 import routes from "@/routes"
 
 const App = () => {
-  return (
-    <div className="w-full">
-      <Router>
-        <ColorNavBar />
+  const routeComponents = routes.map(({ path, component: Component }, id: number) => (
+    <Route key={id} path={path} element={<Component />} />
+  ))
 
+  return (
+    <Router>
+      <FullPage>
         <Routes>
-          {routes.map(({ path, component: Component }, id: number) => (
-            <Route key={id} path={path} element={<Component />} />
-          ))}
+          {routeComponents}
         </Routes>
-      </Router>
-    </div>
+      </FullPage>
+    </Router>
   )
 }
 
