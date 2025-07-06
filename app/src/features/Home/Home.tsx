@@ -1,5 +1,5 @@
 import Section from "@/components/layout/Section"
-import useHome from "@/lib/hooks/useHome"
+import useHome from "./hooks/useHome"
 
 const Home = () => {
   const { data, error, isLoading } = useHome()

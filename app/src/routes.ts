@@ -3,6 +3,7 @@ import { ComponentType } from "react"
 import {
   About,
   Contact,
+  FullPicture,
   Home,
   Login
 } from "@/features"
@@ -29,18 +30,25 @@ const routes: RouteItem[] = [
     component: About
   },
   {
-    path: "/Login",
-    name: "Login",
-    color: "from-blue-100 to-indigo-200",
-    isNavVisible: true,
-    component: Login
-  },
-  {
     path: "/contact",
     name: "Contact",
     color: "from-amber-100 to-orange-200",
     isNavVisible: true,
     component: Contact
+  },
+  {
+    path: "/full",
+    name: "Full Picture",
+    color: "from-orange-100 to-red-200",
+    isNavVisible: false,
+    component: FullPicture
+  },
+  {
+    path: "/Login",
+    name: "Login",
+    color: "from-blue-100 to-indigo-200",
+    isNavVisible: true,
+    component: Login
   },
   {
     path: "/",
