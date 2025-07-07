@@ -148,7 +148,7 @@ Contains generic custom CSS definitions used by the whole app.
 > [!NOTE]
 > The React app follows the [**container-component pattern**](https://www.patterns.dev/react/presentational-container-pattern/) (also known as the container/presentational) pattern, where **logic and data processing are handled in React hooks** (containers) while **components are focused only on rendering UI** (components).
 
-#### 📐 General Coding Guidelines
+### 📐 General Coding Guidelines
 
 - Use **arrow functions** instead of traditional function declarations when defining React components.
 - Follow **camelCase** for naming variables, files, and folders.
@@ -163,7 +163,7 @@ Contains generic custom CSS definitions used by the whole app.
    ❌ fetch("/api/v1/discussions")
    ```
 
-#### ⚛️ React Components
+### ⚛️ React Components
 
 - Keep React components focused on **UI (JSX/HTML)** with minimal logic. Whenever possible, separate logic and data handling into custom **React hooks** (`"containers"`), and use components solely for rendering.
 - Name **component files and function names** using **PascalCase** (e.g., `FeatureOne.tsx`).
@@ -171,19 +171,19 @@ Contains generic custom CSS definitions used by the whole app.
 - Make good use of **component composition** — build small, focused components that can be composed together. Avoid defining multiple components in a single file.
 - Place **globally reusable UI or layout components** in the `📂 /src/components` (ui or layout) subfolders.
 
-#### ⚡ Rendering Optimization
+### ⚡ Rendering Optimization
 
 - Avoid complex expressions (e.g., ternary conditions, computations) directly inside the return() block of a React component. Instead, compute values beforehand and store them in named variables for cleaner, more readable JSX.
 - Use `useMemo()` and `useCallback()` to memoize values and functions where appropriate, especially when passing props to child components or dealing with expensive computations.
 - Observe the React profiler from the [React Developer Tools](https://react.dev/learn/react-developer-tools) to determine which component/s may need rendering optimizations from time to time.
 
-#### 📄 Code Documentation
+### 📄 Code Documentation
 
 - Use **JSDoc-style comments** to document function parameters, return types, and TypeScript type or interface definitions.
 - Add **minimal but meaningful inline comments** where necessary to clarify intent, especially for complex or non-obvious logic.
 - Use **descriptive and self-explanatory variable names** to reduce the need for excessive comments and improve overall code readability.
 
-#### 📦 Use of External Libraries
+### 📦 Use of External Libraries
 
 - Strive to **minimize external dependencies**, especially for simple or easily implementable functionality (e.g., a function that sums two numbers).
 - Only use third-party Node libraries when **truly necessary**—for example, when a library:
