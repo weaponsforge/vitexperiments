@@ -169,6 +169,11 @@ Using Node
 
       This command exports the build artifacts to the `/app/dist` directory.
 
+6. (Alternate) build command without using Docker compose:<br>
+   ```sh
+   docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
+   ```
+
 6. To stop the Docker container:<br>
    ```sh
    docker compose down
@@ -221,6 +226,10 @@ Runs the React app for local development within a Docker container by making the
 ### `npm run docker:build`
 
 Builds the React app within a Docker container into the `/app/dist` directory after setting the `NODE_ENV=production` environment variable.
+
+```sh
+docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run build
+```
 
 </details>
 <br>
