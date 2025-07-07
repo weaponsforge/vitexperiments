@@ -8,7 +8,7 @@ const FullPage = () => {
     <div className="min-h-screen flex flex-col">
       <ColorNavBar />
 
-      <div className="flex-1">
+      <div className="flex-1 p-1 md:p-4">
         <Outlet />
       </div>
 

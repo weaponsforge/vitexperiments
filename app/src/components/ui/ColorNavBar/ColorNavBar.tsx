@@ -24,8 +24,10 @@ const ColorNavBar = () => {
   )
 
   return (
-    <div className={containerStyles}>
-      {navItems}
+    <div className="sticky top-2 z-50 p-2 px-4 mb-2">
+      <div className={containerStyles}>
+        {navItems}
+      </div>
     </div>
   )
 }
