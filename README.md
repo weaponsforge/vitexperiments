@@ -12,8 +12,8 @@ Its folder structure setup and organization will serve as a go-to reference for 
 - [Requirements](#-requirements)
 - [Installation](#️-installation)
 - [Usage](#-usage)
-- [Alternate Usage (Docker)](#-alternate-usage)
-- [Core Libraries](#-core-libraries)
+- [Alternate Usage (Docker)](#alternate-usage)
+- [Core Libraries](#-core-librariesframeworks)
    - [CSS Styling](#css-styling)
    - [Code Linting](#code-linting)
    - [Data Fetching](#data-fetching)
@@ -118,8 +118,8 @@ Using Node
 <summary>Using Docker</summary>
 <br>
 
-> [!IMPORTANT]
-> - Ensure that port `3000` is free before proceeding.
+> **IMPORTANT**
+> Ensure that port `3000` is free before proceeding.
 
 1. Build the image for local development.<br>
    ```sh
@@ -144,7 +144,7 @@ Using Node
    - Ensure the container is running.
    - Open another command terminal and run:<br>
       ```sh
-      docker run exec -it weaponsforge-vitexperiments npm run build
+      docker run exec -it weaponsforge-vitexperiments npm run docker:build
       ```
 
       This command emits the build output in the `/app/dist` directory.
