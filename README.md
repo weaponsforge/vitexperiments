@@ -14,10 +14,6 @@ Its folder structure setup and organization will serve as a go-to reference for 
 - [Usage](#-usage)
 - [Alternate Usage (Docker)](#alternate-usage)
 - [Core Libraries](#-core-librariesframeworks)
-   - [CSS Styling](#css-styling)
-   - [Code Linting](#code-linting)
-   - [Data Fetching](#data-fetching)
-   - [State and Data Management](#state-and-data-management)
 - [Available Scripts](#-available-scripts)
 - [Docker Scripts](#-docker-scripts)
 
@@ -78,7 +74,7 @@ Styling with Tailwind CSS
 | Library | Version | Description |
 | --- | --- | --- |
 | [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.6` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
-| [Zod](https://www.npmjs.com/package/zod) | `v3.25.75` | scalable Typescript-first data validation using schemas
+| [Zod](https://www.npmjs.com/package/zod) | `v3.25.75` | Scalable Typescript-first data validation using schemas
 | [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.60.0` | React hooks for managing form submission data validation
 
 
@@ -155,6 +151,11 @@ Using Node
       ```
 
       This command exports the build artifacts to the `/app/dist` directory.
+
+6. To stop the Docker container:<br>
+   ```sh
+   docker compose down
+   ```
 
 </details>
 <br>
