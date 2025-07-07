@@ -60,6 +60,8 @@ To ensure a smooth contribution process for everyone, please follow these guidel
 
 2. **Relevance:** Content should be relevant to mostly frontend React and TypeScript - coding structure, patterns, naming conventions, optimizations, directory/folder colocation structures and conventions, and/or usage of notable Node libraries for React frontend development closely following and improving this repository's [coding style](/docs/CODING_STYLE.md).
 
-3. **Respect:** Respect the structure and formatting of the existing project. Follow the standard ESLint rules defined in its `app/eslint.config.js` file.
+3. **Working functionality:** For pull requests involving new features or major updates, ensure the changes are fully functional and optimized. Aim to keep PRs within **`~700` lines of code changes**, breaking them into smaller, self-contained parts when possible. PRs exceeding **`~1000+` lines** may be accepted when justified (e.g., major refactors or foundational features).
+
+4. **Respect:** Respect the structure and formatting of the existing project. Follow the standard ESLint rules defined in its `app/eslint.config.js` file.
 
 Thank you for contributing to the **vitexperiments** repository. Your efforts help make the React development community a more organized and structured space for creating React frontend apps.

@@ -32,7 +32,7 @@ The folder structure, setup, and general coding style reflect how I like to [org
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and [CODING STYLE](/docs/CODING_STYLE.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the [CODING STYLE](/docs/CODING_STYLE.md) for guidelines.
 
 ## 📦 Core Libraries/Frameworks
 
