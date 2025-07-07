@@ -1,8 +1,8 @@
 ## vitexperiments
 
-This repository contains a simple React frontend application built with [Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
+This repository contains a simple React frontend application built with [⚡Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
 
-The folder structure, setup, and general coding style reflect how I like to organize TypeScript React apps built with Vite, or for any React projects that use **React Router** for routing.
+The folder structure, setup, and general coding style reflect how I like to [organize TypeScript React apps](/docs/CODING_STYLE.md) built with Vite, or for any React projects that use **React Router** for routing (including the retired [🪦Create-React-App](https://create-react-app.dev/docs/getting-started/) (CRA)).
 
 ### Table of Contents
 
@@ -115,6 +115,19 @@ Using Node
 
    This command exports the build artifacts to the `/app/dist` directory.
 
+5. Run the lint and build scripts to ensure new code updates follow this repository's coding conventions.<br>
+   Lint
+   ```sh
+   # Checks and fixes lint errors
+   npm run lint:fix
+   ```
+
+   Build
+   ```sh
+   # Runs tsc for checking type errors before building the app
+   npm run build
+   ```
+
 ## ⚡Alternate Usage
 
 <details>
@@ -171,7 +184,7 @@ These Node scripts, compatible with running in Node and Docker, run Vite React p
 
 ### `npm run build`
 
-- Builds or bundles the React app into optimized static assets for deployment into the `/app/dist` directory.
+- Runs type-checking with `tsc` then proceeds to build or bundle the React app into optimized static assets for deployment into the `/app/dist` directory.
 - This script has a counterpart in the [🐳 Docker Scripts](#-docker-scripts) section (`npm run docker:build`) for optimally building the app from a Docker container.
 
 ### `npm run lint`
