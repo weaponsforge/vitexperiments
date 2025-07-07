@@ -8,8 +8,7 @@ COPY package*.json ./
 FROM base AS build
 RUN npm install && npm cache clean --force
 COPY . ./
-RUN npm run export
-USER node
+RUN npm run build
 
 # DEVELOPMENT CLIENT PROFILE
 FROM base AS development
@@ -17,7 +16,9 @@ ENV NODE_ENV=development
 RUN npm install && npm cache clean --force
 COPY . ./
 RUN mkdir /opt/app/node_modules/.vite \
-  && chown -R node:node /opt/app/node_modules/.vite
+  && mkdir /opt/app/node_modules/.tmp \
+  && chown -R node:node /opt/app/node_modules/.vite \
+  && chown -R node:node /opt/app/node_modules/.tmp
 USER node
 EXPOSE 3000
 CMD ["npm", "run", "dev:docker"]
