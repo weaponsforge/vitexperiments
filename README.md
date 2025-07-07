@@ -56,15 +56,15 @@ Styling with Tailwind CSS
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [clsx](https://www.npmjs.com/package/clsx) | `v2.1.1` | utility for constructing class name strings conditionally
-| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.3.1` | utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
-| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.3.5` | a pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
+| [clsx](https://www.npmjs.com/package/clsx) | `v2.1.1` | Utility for constructing class name strings conditionally
+| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.3.1` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
+| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.3.5` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
 
 #### Code Linting
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [ESlint](https://www.npmjs.com/package/eslint) | `v9.22.0` | enforces coding formats, rules and preferences
+| [ESlint](https://www.npmjs.com/package/eslint) | `v9.22.0` | Enforces coding formats, rules and preferences
 
 #### Data Fetching
 
@@ -77,7 +77,7 @@ Styling with Tailwind CSS
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.6` | minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
+| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.6` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
 | [Zod](https://www.npmjs.com/package/zod) | `v3.25.75` | scalable Typescript-first data validation using schemas
 | [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.60.0` | React hooks for managing form submission data validation
 
