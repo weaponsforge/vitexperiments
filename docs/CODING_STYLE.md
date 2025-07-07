@@ -145,6 +145,7 @@ Contains generic custom CSS definitions used by the whole app.
 - Always define the **types** of function parameters and return values. Use TypeScript **interfaces** or **types** for generic parameters when applicable.
 - Implement features using a **co-located structure** within the `📂 src/features` directory.
 - Define new **page-level components** by registering them in the `📄 /src/routes.ts` file.
+- Aim to keep each source file—whether a React component, hook, or utility script—**under approximately 300 lines of code**. If a file exceeds this size, **consider refactoring** it into smaller, more focused files to improve clarity and maintainability.
 - Store constant values (e.g., strings or numbers) in **well-named variables** to improve readability and maintainability.
    ```typescript
    ✅ const DISCUSSIONS_API = "/api/v1/discussions"

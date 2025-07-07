@@ -58,7 +58,7 @@ To ensure a smooth contribution process for everyone, please follow these guidel
 
 1. **Quality:** Ensure your contributions are high quality, with no spelling or grammatical errors.
 
-2. **Relevance:** Content should be relevant to mostly frontend React and TypeScript - coding structure, patterns, naming conventions, optimizations, directory/folder colocation structures and conventions, and/or usage of notable Node libraries for React frontend development.
+2. **Relevance:** Content should be relevant to mostly frontend React and TypeScript - coding structure, patterns, naming conventions, optimizations, directory/folder colocation structures and conventions, and/or usage of notable Node libraries for React frontend development closely following and improving this repository's [coding style](/docs/CODING_STYLE.md).
 
 3. **Respect:** Respect the structure and formatting of the existing project. Follow the standard ESLint rules defined in its `app/eslint.config.js` file.
 
