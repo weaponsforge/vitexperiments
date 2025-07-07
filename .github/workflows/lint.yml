@@ -1,0 +1,35 @@
+name: Lint and Transpile
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  lint-app:
+    name: Lint App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.15.0
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Lint
+        run: |
+          cd app
+          npm run lint
+
+      - name: Transpile
+        run: |
+          cd app
+          npx tsc
