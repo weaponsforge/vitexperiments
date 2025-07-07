@@ -4,10 +4,8 @@ name: Deploy to Development Environment
 
 on:
   push:
-    branches-ignore:
-      - main
-    # branches:
-    #  - dev
+    branches:
+      - dev
 
 jobs:
   lint-client:

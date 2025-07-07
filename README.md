@@ -16,6 +16,8 @@ The folder structure, setup, and general coding style reflect how I like to [org
 - [Core Libraries](#-core-librariesframeworks)
 - [Available Scripts](#-available-scripts)
 - [Docker Scripts](#-docker-scripts)
+- [Deployment](#-deployment)
+- [Usage with GitHub Actions](#-usage-with-github-actions)
 
 </details>
 
@@ -234,7 +236,7 @@ docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge
 </details>
 <br>
 
-## Deployment
+## 🛫 Deployment
 
 ### Firebase Hosting
 
@@ -258,7 +260,7 @@ Follow these steps for manually deploying the static site to Firebase Hosting.
 6. Deploy the static site.<br>
 `firebase deploy --only hosting`
 
-## Usage with GitHub Actions
+## 🚀 Usage with GitHub Actions
 
 Add the following GitHub Actions "Secrets" for deploying the React app to the development environment (Firebase Hosting) on push or merge of PRs to the `dev` branch.
 
@@ -269,5 +271,5 @@ Add the following GitHub Actions "Secrets" for deploying the React app to the de
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
 
 @weaponsforge<br>
-20250430
+20250430<br>
 20250708
