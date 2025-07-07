@@ -44,7 +44,7 @@ const routes: RouteItem[] = [
     component: FullPicture
   },
   {
-    path: "/Login",
+    path: "/login",
     name: "Login",
     color: "from-blue-100 to-indigo-200",
     isNavVisible: true,
