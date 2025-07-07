@@ -10,6 +10,7 @@ This document outlines the general React coding styles and guidelines for this r
    - [React Components](#️-react-components)
    - [Rendering Optimization](#-rendering-optimization)
    - [Code Documentation](#-code-documentation)
+   - [Use of External Libraries](#-use-of-external-libraries)
 
 ## 📚 Project Folder Structure
 
@@ -98,7 +99,7 @@ This folder contains publicly accessible media assets and data that can be serve
 
  Contains general-purpose, reusable React components shared across all `📂 features`.
 
-- `/layout` — Includes layout components that use <Outlet /> with React Router, as well as full-page layout wrappers that accept {children} as props.
+- `/layout` — Includes layout components that use `<Outlet />` with React Router, as well as full-page layout wrappers that accept {children} as props.
 - `/ui` — Contains small, reusable UI elements and widgets such as input fields, date pickers, notifications, and similar components.
 
 #### 📂 src/lib
@@ -106,7 +107,7 @@ This folder contains publicly accessible media assets and data that can be serve
  Contains shared scripts, configurations, and utilities used throughout the app.
 
 - `/config` — Configuration files and setup definitions, such as settings for third-party integrations.
-- `/hooks` — Reusable React hooks that can be used across the app (e.g., useDebounce). Also includes hooks used by 📂 components like ui or layout.
+- `/hooks` — Reusable React hooks that can be used across the app (e.g., `useDebounce()`). Also includes hooks used by `📂 components` like ui or layout.
 - `/services` — Contains logic for making asynchronous HTTP requests (CRUD operations) to external RESTful APIs.
    - `apiRoutes.ts` — Centralized definitions for all remote API endpoint URLs used in the app.
 - `/store` — Contains state management logic (e.g., Zustand or Redux slices and definitions).
@@ -144,6 +145,9 @@ Contains generic custom CSS definitions used by the whole app.
 
 ## 📌 Coding Practices and Guidelines
 
+> [!NOTE]
+> The React app follows the [**container-component pattern**](https://www.patterns.dev/react/presentational-container-pattern/) (also known as the container/presentational) pattern, where **logic and data processing are handled in React hooks** (containers) while **components are focused only on rendering UI** (components).
+
 #### 📐 General Coding Guidelines
 
 - Use **arrow functions** instead of traditional function declarations when defining React components.
@@ -178,6 +182,20 @@ Contains generic custom CSS definitions used by the whole app.
 - Use **JSDoc-style comments** to document function parameters, return types, and TypeScript type or interface definitions.
 - Add **minimal but meaningful inline comments** where necessary to clarify intent, especially for complex or non-obvious logic.
 - Use **descriptive and self-explanatory variable names** to reduce the need for excessive comments and improve overall code readability.
+
+#### 📦 Use of External Libraries
+
+- Strive to **minimize external dependencies**, especially for simple or easily implementable functionality (e.g., a function that sums two numbers).
+- Only use third-party Node libraries when **truly necessary**—for example, when a library:
+   - Provides functionality that would be complex or time-consuming to build from scratch
+   - Is used frequently across the app
+   - Helps avoid "reinventing the wheel" for heavy processing tasks
+- Before adding a library, consider the following 🟢 green flags:
+   - It comes from a **credible author or organization**, with an active and trustworthy GitHub repository
+   - It has **high usage** and community trust (e.g., ~100K+ downloads on the NPM registry)
+   - It has **small and lightweight footprint** (eg., about ~300KB-2MB unpacked) or if it supports **tree-shaking**.
+   - The source code is **open, transparent, and actively maintained** (eg., few open GitHub Issues or PRs)
+   - Even if not actively maintained, the library still **aligns with your needs** and is simple enough to extend or adapt for custom use (e.g., a JavaScript `class` that can be easily refactored or subclassed (`extend`) for custom use)
 
 @weaponsforge<br>
 20250708
