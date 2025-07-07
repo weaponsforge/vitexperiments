@@ -150,6 +150,7 @@ Contains generic custom CSS definitions used by the whole app.
 
 ### 📐 General Coding Guidelines
 
+- Use **`LF` (Line Feed)** as the line ending format for all code and other files to ensure consistency across environments and platforms.
 - Use **arrow functions** instead of traditional function declarations when defining functions and methods. Only use `function()` definitions for specific cases.
 - Follow **camelCase** for naming variables, files, and folders.
 - Always define the **types** of function parameters and return values. Use TypeScript **interfaces** or **types** for generic parameters when applicable.

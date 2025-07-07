@@ -234,5 +234,40 @@ docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge
 </details>
 <br>
 
+## Deployment
+
+### Firebase Hosting
+
+Follow these steps for manually deploying the static site to Firebase Hosting.
+
+#### Requirements
+
+1. Firebase project with Firebase Hosting pre-configured and set-up.
+2. Firebase CLI (Firebase Admin)
+   - Installed preferrably using the "npm install -g firebase-tools" command.
+
+#### Steps
+
+1. Open the `.firebaserc` file in the client directory.
+2. Replace the `"<FIREBASE_PROJECT>"` key with a target Firebase project.
+3. Replace the `"<FIREBASE_HOSTING>"` key with a target Firebase Hosting name under the `"<FIREBASE_PROJECT>"`.
+4. Build the static site.<br>
+`npm run build`
+5. Login to your Firebase account using the Firebase CLI.<br>
+`firebase login`
+6. Deploy the static site.<br>
+`firebase deploy --only hosting`
+
+## Usage with GitHub Actions
+
+Add the following GitHub Actions "Secrets" for deploying the React app to the development environment (Firebase Hosting) on push or merge of PRs to the `dev` branch.
+
+| Secret Name | Description |
+| --- | --- |
+| FIREBASE_PROJECT | Firebase project ID |
+| FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
+| FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
+
 @weaponsforge<br>
 20250430
+20250708
