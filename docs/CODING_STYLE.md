@@ -104,7 +104,7 @@ This folder contains publicly accessible media assets and data that can be serve
 - `/config` — Configuration files and setup definitions, such as settings for third-party integrations.
 - `/hooks` — Reusable React hooks that can be used across the app (e.g., useDebounce). Also includes hooks used by 📂 components like ui or layout.
 - `/services` — Contains logic for making asynchronous HTTP requests (CRUD operations) to external RESTful APIs.
-apiRoutes.ts — Centralized definitions for all remote API endpoint URLs used in the app.
+   - `apiRoutes.ts` — Centralized definitions for all remote API endpoint URLs used in the app.
 - `/store` — Contains state management logic (e.g., Zustand or Redux slices and definitions).
 - `/utils` — General-purpose utility functions, such as date formatters and other helpers.
 
@@ -115,14 +115,14 @@ Organizes self-contained features of the app. Each subfolder represents a comple
 - **Co-location** — Each feature folder may include its internal structure such as `/components`, `/hooks`, `/stores`, and `/styles`. Co-location simplifies finding feature-related files as the code base grows larger.
 
 - **Access Rules (Enforced by `no-restricted-imports` ESLint Rule):**
-   - **🔒 From outside /features**
+   - **🔒 From outside the `/features` folder**
       - Only import feature entry components from the top-level @/features path.
          ```typescript
          ✅ import { About, Contact } from "@/features"
          ❌ import About from "@/features/About/About"
          ❌ import About from "../../features/About/About"
          ```
-   - **🔒 From inside /features**
+   - **🔒 From inside the `/features` folder**
       - Use relative imports when referencing other components, either within the same feature or across features.
          ```typescript
          ❌ import { About, Contact } from "@/features"
