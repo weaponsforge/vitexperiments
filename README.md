@@ -1,8 +1,8 @@
 ## vitexperiments
 
-This repository, featuring a simple app that has a sticky **Navigation Menu Bar** and three (3) empty pages (**Home**, **About**, **Login**, and **Contact**) contains random Frontend, CSS, and React experiments using [Vite](https://vite.dev/).
+This repository contains a simple React frontend application built with [Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
 
-Its folder structure setup and organization will serve as a go-to reference for similar TypeScript React apps created with Vite, or general React apps that use the **React Router** for routing.
+The folder structure, setup, and general coding style reflect how I like to organize TypeScript React apps built with Vite, or for any React projects that use **React Router** for routing.
 
 ### Table of Contents
 
