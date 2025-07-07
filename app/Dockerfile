@@ -8,8 +8,7 @@ COPY package*.json ./
 FROM base AS build
 RUN npm install && npm cache clean --force
 COPY . ./
-RUN npm run export
-USER node
+RUN npm run build
 
 # DEVELOPMENT CLIENT PROFILE
 FROM base AS development
