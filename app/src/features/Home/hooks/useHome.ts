@@ -1,5 +1,6 @@
 import { useMemo } from "react"
 import useSWR from "swr"
+
 import { fetchPlaceholderText } from "@/lib/services/placeholder"
 import { PLACEHOLDER_TEXT } from "@/lib/services/apiRoutes"
 
