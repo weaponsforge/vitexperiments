@@ -147,7 +147,7 @@ Using Node
       docker run exec -it weaponsforge-vitexperiments npm run docker:build
       ```
 
-      This command emits the build output in the `/app/dist` directory.
+      This command exports the build artifacts to the `/app/dist` directory.
 
 </details>
 <br>
