@@ -164,9 +164,6 @@ Using Node
 
 These Node scripts, compatible with running in Node and Docker, run Vite React processes for local development.
 
-<details>
-<summary>Click to expand the list of available Node scripts</summary>
-
 ### `npm run dev`
 
 - Runs the app for local development.
@@ -191,7 +188,7 @@ Fixes lint errors.
 - It requires running `npm run build` first
 - (Currently not supported with the Docker setup)
 
-</details>
+<br>
 
 ## 🐳 Docker Scripts
 
