@@ -1,7 +1,7 @@
 {
   "name": "vite",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "React app template created with Vite",
   "engines": {
@@ -14,7 +14,7 @@
     "lint:fix": "eslint src --fix",
     "preview": "vite preview",
     "docker:dev": "vite --port=3000 --host",
-    "docker:build": "export NODE_ENV=production && tsc -b && vite build"
+    "docker:build": "export NODE_ENV=production && npm run build"
   },
   "dependencies": {
     "axios": "^1.10.0",

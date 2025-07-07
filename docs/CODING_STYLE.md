@@ -150,7 +150,8 @@ Contains generic custom CSS definitions used by the whole app.
 
 ### 📐 General Coding Guidelines
 
-- Use **arrow functions** instead of traditional function declarations when defining React components.
+- Use **`LF` (Line Feed)** as the line ending format for all code and other files to ensure consistency across environments and platforms.
+- Use **arrow functions** instead of traditional function declarations when defining functions and methods. Only use `function()` definitions for specific cases.
 - Follow **camelCase** for naming variables, files, and folders.
 - Always define the **types** of function parameters and return values. Use TypeScript **interfaces** or **types** for generic parameters when applicable.
 - Implement features using a **co-located structure** within the `📂 src/features` directory.
@@ -165,15 +166,16 @@ Contains generic custom CSS definitions used by the whole app.
 
 ### ⚛️ React Components
 
+- Use **arrow functions** instead of traditional function declarations when defining React components.
 - Keep React components focused on **UI (JSX/HTML)** with minimal logic. Whenever possible, separate logic and data handling into custom **React hooks** (`"containers"`), and use components solely for rendering.
-- Name **component files and function names** using **PascalCase** (e.g., `FeatureOne.tsx`).
+- Name **component files, function names and variables** using **PascalCase** (e.g., `FeatureOne.tsx`).
 - Use **TypeScript interfaces or types** to define props instead of PropTypes.
 - Make good use of **component composition** — build small, focused components that can be composed together. Avoid defining multiple components in a single file.
 - Place **globally reusable UI or layout components** in the `📂 /src/components` (ui or layout) subfolders.
 
 ### ⚡ Rendering Optimization
 
-- Avoid complex expressions (e.g., ternary conditions, computations) directly inside the return() block of a React component. Instead, compute values beforehand and store them in named variables for cleaner, more readable JSX.
+- Avoid complex expressions (e.g., ternary conditions, computations) directly inside the `return()` block of a React component. Instead, compute values beforehand and store them in named variables for cleaner, more readable JSX.
 - Use `useMemo()` and `useCallback()` to memoize values and functions where appropriate, especially when passing props to child components or dealing with expensive computations.
 - Observe the React profiler from the [React Developer Tools](https://react.dev/learn/react-developer-tools) to determine which component/s may need rendering optimizations from time to time.
 
