@@ -148,7 +148,7 @@ Using Node
    docker compose build --no-cache
    ```
 
-   > **INFO:** Re-run this step if there will be changes to the Dockerfile or after installing new Node libraries.
+   > **INFO:** Do this step only once during initial installation. Re-run this step if there will be changes to the Dockerfile or after installing new Node libraries.
 
 2. Run the container for local development.<br>
    ```sh
@@ -172,7 +172,8 @@ Using Node
       This command exports the build artifacts to the `/app/dist` directory.
 
 6. (Alternate) build command without using Docker compose:<br>
-   ```sh
+   ```
+   # Using PowerShell
    docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
@@ -230,7 +231,7 @@ Runs the React app for local development within a Docker container by making the
 Builds the React app within a Docker container into the `/app/dist` directory after setting the `NODE_ENV=production` environment variable.
 
 ```sh
-docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run build
+docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
 ```
 
 </details>
@@ -246,7 +247,7 @@ Follow these steps for manually deploying the static site to Firebase Hosting.
 
 1. Firebase project with Firebase Hosting pre-configured and set-up.
 2. Firebase CLI (Firebase Admin)
-   - Installed preferrably using the "npm install -g firebase-tools" command.
+   - Installed preferrably using the `"npm install -g firebase-tools"` command.
 
 #### Steps
 
