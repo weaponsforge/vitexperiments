@@ -2,17 +2,13 @@ name: Deploy to GitHub Pages
 
 # This workflow will trigger on any tag/release created from the `main` branch
 on:
-  push:
-    branches-ignore:
-      - main
-      - dev
-  # release:
-  #  types: [published]
+  release:
+    types: [published]
 
 jobs:
   lint-export-client:
     name: Lint and Export client
-    # if: github.event.release.target_commitish == 'main'
+    if: github.event.release.target_commitish == 'main'
     runs-on: ubuntu-latest
     env:
       VITE_PUBLIC_BASE_PATH: ${{ secrets.VITE_PUBLIC_BASE_PATH }}
@@ -52,7 +48,7 @@ jobs:
 
   deploy-client:
     name: Deploy client to Github Pages
-    # if: github.event.release.target_commitish == 'main'
+    if: github.event.release.target_commitish == 'main'
     needs: lint-export-client
     runs-on: ubuntu-latest
     steps:

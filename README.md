@@ -4,6 +4,11 @@ This repository contains a simple React frontend application built with [⚡Vite
 
 The folder structure, setup, and general coding style reflect how I like to [organize TypeScript React apps](/docs/CODING_STYLE.md) built with Vite, or for any React projects that use **React Router** for routing (including the retired [🪦Create-React-App](https://create-react-app.dev/docs/getting-started/) (CRA)).
 
+### Live Demos
+
+- **Production:** https://weaponsforge.github.io/vitexperiments/
+- **Development:** https://vitexperiments.web.app/
+
 ### Table of Contents
 
 <details>
@@ -182,7 +187,7 @@ Using Node
 6. (Alternate) build command without using Docker compose:<br>
    ```
    # Using PowerShell
-   docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
+   docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
 7. To stop the Docker container:<br>
@@ -239,7 +244,7 @@ Runs the React app for local development within a Docker container by making the
 Builds the React app within a Docker container into the `/app/dist` directory after setting the `NODE_ENV=production` environment variable.
 
 ```sh
-docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
+docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
 ```
 
 </details>
@@ -278,7 +283,7 @@ Add the following GitHub Actions "Secrets" for deploying the React app to the de
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
-| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>Exclude in the `.env` file when working on development mode in localhost.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
+| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>**Exclude** this in the `.env` file when **working on development mode in localhost**.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
 
 @weaponsforge<br>
 20250430<br>
