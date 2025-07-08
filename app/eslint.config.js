@@ -33,10 +33,12 @@ export default tseslint.config(
       'indent': ['error', 2],
       'linebreak-style': ['error', 'unix'],
       'quotes': ['error', 'double'],
+      'jsx-quotes': ['error', 'prefer-double'],
       'semi': ['error', 'never'],
       'comma-dangle': ['error', 'never'],
       'object-curly-spacing': ['error', 'always'],
       'eol-last': ['error', 'always'],
+      'no-console': ['error', { 'allow': ['error'] }],
       'no-restricted-imports': [
         'error', { 'patterns': ['@/features/*/*'] }
       ]
