@@ -98,6 +98,14 @@ Styling with Tailwind CSS
    npm install
    ```
 
+3. **When using Docker:** (Optional) Initialize a `.env` file when working on a Windows OS host. Create a `.env` file from the `.env.example` file and uncomment/enable the `CHOKIDAR_USEPOLLING` and `CHOKIDAR_INTERVAL` variables.
+
+   | Variable Name | Description |
+   | --- | --- |
+   | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>Exclude in the `.env` file when working on development mode in localhost.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
+   | CHOKIDAR_USEPOLLING | Enables hot reload on `nodemon` running inside Docker containers on a Windows host. Set it to true if running Docker Desktop with WSL2 on a Windows OS. |
+   | CHOKIDAR_INTERVAL | Chokidar polling interval. Set it along with `CHOKIDAR_USEPOLLING=true` if running Docker Desktop with WSL2 on a Windows OS. The default value is `1000`. |
+
 ## 📖 Usage
 
 Using Node
@@ -177,7 +185,7 @@ Using Node
    docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
-6. To stop the Docker container:<br>
+7. To stop the Docker container:<br>
    ```sh
    docker compose down
    ```
@@ -270,6 +278,7 @@ Add the following GitHub Actions "Secrets" for deploying the React app to the de
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
+| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>Exclude in the `.env` file when working on development mode in localhost.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
 
 @weaponsforge<br>
 20250430<br>
