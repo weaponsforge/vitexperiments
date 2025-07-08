@@ -4,6 +4,8 @@ import FullPage from "@/components/layout/FullPage"
 import NotFound from "@/components/ui/NotFound"
 import routes from "@/routes"
 
+const VITE_PUBLIC_BASE_PATH = import.meta.env.VITE_PUBLIC_BASE_PATH || ""
+
 const App = () => {
   const pagesWithNavBar = routes.map((route, id: number) => {
     const { component: Component, isNavVisible, path } = route
@@ -20,7 +22,7 @@ const App = () => {
     ))
 
   return (
-    <Router>
+    <Router basename={VITE_PUBLIC_BASE_PATH}>
       <Routes>
         {/** Routes without FullPage */}
         {otherPages}
