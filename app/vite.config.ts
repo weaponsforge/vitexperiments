@@ -3,8 +3,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 
+const VITE_PUBLIC_BASE_PATH = process.env.VITE_PUBLIC_BASE_PATH
+
 // https://vite.dev/config/
 export default defineConfig({
+  base: VITE_PUBLIC_BASE_PATH || '/',
+
   plugins: [
     react(),
     tailwindcss()

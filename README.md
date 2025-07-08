@@ -4,6 +4,11 @@ This repository contains a simple React frontend application built with [⚡Vite
 
 The folder structure, setup, and general coding style reflect how I like to [organize TypeScript React apps](/docs/CODING_STYLE.md) built with Vite, or for any React projects that use **React Router** for routing (including the retired [🪦Create-React-App](https://create-react-app.dev/docs/getting-started/) (CRA)).
 
+### Live Demos
+
+- **Production:** https://weaponsforge.github.io/vitexperiments/
+- **Development:** https://vitexperiments.web.app/
+
 ### Table of Contents
 
 <details>
@@ -98,6 +103,14 @@ Styling with Tailwind CSS
    npm install
    ```
 
+3. **When using Docker:** (Optional) Initialize a `.env` file when working on a Windows OS host. Create a `.env` file from the `.env.example` file and uncomment/enable the `CHOKIDAR_USEPOLLING` and `CHOKIDAR_INTERVAL` variables.
+
+   | Variable Name | Description |
+   | --- | --- |
+   | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>Exclude in the `.env` file when working on development mode in localhost.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
+   | CHOKIDAR_USEPOLLING | Enables hot reload on `nodemon` running inside Docker containers on a Windows host. Set it to true if running Docker Desktop with WSL2 on a Windows OS. |
+   | CHOKIDAR_INTERVAL | Chokidar polling interval. Set it along with `CHOKIDAR_USEPOLLING=true` if running Docker Desktop with WSL2 on a Windows OS. The default value is `1000`. |
+
 ## 📖 Usage
 
 Using Node
@@ -148,7 +161,7 @@ Using Node
    docker compose build --no-cache
    ```
 
-   > **INFO:** Re-run this step if there will be changes to the Dockerfile or after installing new Node libraries.
+   > **INFO:** Do this step only once during initial installation. Re-run this step if there will be changes to the Dockerfile or after installing new Node libraries.
 
 2. Run the container for local development.<br>
    ```sh
@@ -172,11 +185,12 @@ Using Node
       This command exports the build artifacts to the `/app/dist` directory.
 
 6. (Alternate) build command without using Docker compose:<br>
-   ```sh
-   docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run docker:build
+   ```
+   # Using PowerShell
+   docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
-6. To stop the Docker container:<br>
+7. To stop the Docker container:<br>
    ```sh
    docker compose down
    ```
@@ -230,7 +244,7 @@ Runs the React app for local development within a Docker container by making the
 Builds the React app within a Docker container into the `/app/dist` directory after setting the `NODE_ENV=production` environment variable.
 
 ```sh
-docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments npm run build
+docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
 ```
 
 </details>
@@ -246,7 +260,7 @@ Follow these steps for manually deploying the static site to Firebase Hosting.
 
 1. Firebase project with Firebase Hosting pre-configured and set-up.
 2. Firebase CLI (Firebase Admin)
-   - Installed preferrably using the "npm install -g firebase-tools" command.
+   - Installed preferrably using the `"npm install -g firebase-tools"` command.
 
 #### Steps
 
@@ -269,6 +283,7 @@ Add the following GitHub Actions "Secrets" for deploying the React app to the de
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
+| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>**Exclude** this in the `.env` file when **working on development mode in localhost**.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
 
 @weaponsforge<br>
 20250430<br>

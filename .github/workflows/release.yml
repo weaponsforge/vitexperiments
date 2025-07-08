@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+# This workflow will trigger on any tag/release created from the `main` branch
+on:
+  release:
+    types: [published]
+
+jobs:
+  lint-export-client:
+    name: Lint and Export client
+    if: github.event.release.target_commitish == 'main'
+    runs-on: ubuntu-latest
+    env:
+      VITE_PUBLIC_BASE_PATH: ${{ secrets.VITE_PUBLIC_BASE_PATH }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.15.0
+      - name: Install Dependencies and lint
+        run: |
+          cd app
+          npm install
+      - name: Lint
+        run: |
+          cd app
+          npm run lint
+      - name: Export static files
+        run: |
+          cd app
+          npm run docker:build
+        # Rename index.html to 404.html to enable routing rewrites of all assets
+      - name: GH Pages Hack - rename index.html to 404.html
+        run: |
+          cd app
+          mv dist/index.html dist/404.html
+      - name: Disable Jekyll
+        run: touch app/dist/.nojekyll
+      - name: Archive Development Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-out
+          include-hidden-files: true
+          path: app/dist
+          retention-days: 3
+
+  deploy-client:
+    name: Deploy client to Github Pages
+    if: github.event.release.target_commitish == 'main'
+    needs: lint-export-client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: main-out
+      - name: List files for publish
+        run: ls -l -a
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
