@@ -7,12 +7,12 @@ const VITE_PUBLIC_BASE_PATH = process.env.VITE_PUBLIC_BASE_PATH
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: VITE_PUBLIC_BASE_PATH || '/',
+
   plugins: [
     react(),
     tailwindcss()
   ],
-
-  ...(VITE_PUBLIC_BASE_PATH && { base: VITE_PUBLIC_BASE_PATH }),
 
   server: {
     host: 'localhost',
