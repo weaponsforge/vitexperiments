@@ -35,8 +35,11 @@ jobs:
         run: |
           cd app
           npm run docker:build
-          # GH Hack: rename index.html to 404.html to enable routing rewrites of all assets
-          mv app/dist/index.html app/dist/404.html
+        # Rename index.html to 404.html to enable routing rewrites of all assets
+      - name: GH Pages Hack - rename index.html to 404.html
+        run: |
+          cd app
+          mv dist/index.html dist/404.html
       - name: Disable Jekyll
         run: touch app/dist/.nojekyll
       - name: Archive Development Artifact
