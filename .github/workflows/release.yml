@@ -109,7 +109,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./app
-          file: Dockerfile
+          file: ./app/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
