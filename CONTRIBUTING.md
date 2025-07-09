@@ -25,7 +25,8 @@ To ensure a smooth contribution process for everyone, please follow these guidel
    git checkout -b feat/your-new-feature-name
    ```
 
-2. **Add Your Content:** Make your changes or additions to the project. If you're adding new content, ensure it's placed in the correct directory and follows intuitive naming conventions and JavaScript coding best practices and patterns for Node.
+2. **Add Your Content:** Make your changes or additions to the project. If you're adding new content, ensure it's placed in the correct directory and follows intuitive naming conventions and React coding best practices and patterns described in the [CODING STYLE](/docs/CODING_STYLE.md).
+   - > **INFO:** New coding styles and patterns are also welcome. Feel free to introduce or use new patterns as well, and describe how they will improve the overall DX.
 
 3. **Commit Your Changes:** After making your changes, commit them to your branch. Use clear and concise commit messages to describe your updates.
    ```
@@ -58,7 +59,7 @@ To ensure a smooth contribution process for everyone, please follow these guidel
 
 1. **Quality:** Ensure your contributions are high quality, with no spelling or grammatical errors.
 
-2. **Relevance:** Content should be relevant to mostly frontend React and TypeScript - coding structure, patterns, naming conventions, optimizations, directory/folder colocation structures and conventions, and/or usage of notable Node libraries for React frontend development closely following and improving this repository's [coding style](/docs/CODING_STYLE.md).
+2. **Relevance:** Content should be relevant to mostly frontend React and TypeScript - coding structure, patterns, naming conventions, optimizations, directory/folder colocation structures and conventions, and/or usage of notable Node libraries for React frontend development closely following and improving this repository's [CODING STYLE](/docs/CODING_STYLE.md).
 
 3. **Working functionality:** For pull requests involving new features or major updates, ensure the changes are fully functional and optimized. Aim to keep PRs within **`~700` lines of code changes**, breaking them into smaller, self-contained parts when possible. PRs exceeding **`~1000+` lines** may be accepted when justified (e.g., major refactors or foundational features).
 
