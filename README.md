@@ -301,6 +301,7 @@ docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/
 `firebase deploy --only hosting`
 
 </details>
+<br>
 
 ## 🚀 Usage with GitHub Actions
 
@@ -308,13 +309,13 @@ docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/
 
 #### Deployment to Firebase Hosting
 
-This repository deploys the latest **development** website to Firebase Hosting at https://vitexperiments.web.app/ **on changes to the `dev` branch from push or PR merges**. Supply the following **Firebase-related GitHub Secrets** to enable deployment to Firebase Hosting. It requires a Firebase Account and an activated Firebase Hosting target website.
+This repository deploys the latest **development** website to the Firebase Hosting website at https://vitexperiments.web.app/ **on changes to the `dev` branch** (from push or PR merges). Supply the following **Firebase-related GitHub Secrets** to enable deployment to Firebase Hosting. It requires a Firebase Account and an activated Firebase Hosting target website.
 
 ### B. Production Deployment
 
 #### Deployment to GitHub Pages
 
-This repository deploys the latest website to the GitHub Pages website of this repository at https://weaponsforge.github.io/vitexperiments/ **on the creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the `VITE_PUBLIC_BASE_PATH` GitHub Secret to enable deployment to GitHub Pages. It also requires a GitHub Pages enabled for this repository and a `gh-pages` branch.
+This repository deploys the latest website to the GitHub Pages website of this repository at https://weaponsforge.github.io/vitexperiments/ **on the creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the `VITE_PUBLIC_BASE_PATH` GitHub Secret to enable deployment to GitHub Pages. It also requires a **GitHub Pages enabled** for this repository and a **`gh-pages` branch**.
 
 > [!IMPORTANT]
 > Add the `VITE_PUBLIC_BASE_PATH` environment variable described in the [Installation - step # 3](#️-installation) section to GitHub Secrets.
@@ -333,6 +334,8 @@ https://hub.docker.com/r/weaponsforge/vitexperiments
 
 | GitHub Secret Name | Description |
 | --- | --- |
+| DOCKERHUB_USERNAME | Docker Hub username |
+| DOCKERHUB_TOKEN | Deploy token for the Docker Hub account |
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
@@ -343,7 +346,6 @@ https://hub.docker.com/r/weaponsforge/vitexperiments
 | GitHub Variable Name | Description |
 | --- | --- |
 | DOCKERHUB_USERNAME | Docker Hub username |
-| DOCKERHUB_TOKEN | Deploy token for the Docker Hub account |
 
 @weaponsforge<br>
 20250430<br>
