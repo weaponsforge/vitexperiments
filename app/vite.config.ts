@@ -15,13 +15,6 @@ export default defineConfig({
     tailwindcss()
   ],
 
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    include: ['**/*.test.tsx'],
-    setupFiles: './src/lib/config/setupTests.ts'
-  },
-
   server: {
     host: 'localhost',
     port: 3000,
@@ -31,5 +24,30 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
-  }
+  },
+
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    include: ['**/*.test.tsx'],
+    setupFiles: './src/lib/config/setupTests.ts',
+    reporters: ['verbose', 'html', 'junit'],
+    outputFile: {
+      junit: './html/junit.xml'
+    },
+    coverage: {
+      provider: 'v8',
+      enabled: true,
+      reportsDirectory: './html/coverage',
+      include: ['src'],
+      exclude: [
+        'node_modules/',
+        'dist/',
+        'html/'
+      ]
+    },
+    ui: {
+      port: 3003
+    }
+  },
 })
