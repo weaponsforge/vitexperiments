@@ -253,6 +253,29 @@ Fixes lint errors.
 - It requires running `npm run build` first
 - (Currently not supported with the Docker setup)
 
+### `npm test`
+
+- Runs test scripts defined in `*.test.ts` files with coverage.
+- Generates a vitest test report into the `/html` directory.
+- Run npm `run report:view` to preview the generated report.
+
+### `npm test:watch`
+
+Runs vitest in watch mode, watching file changes and errors to files linked with `*.test.ts` files.
+
+### `npm run test:ui`
+
+- Runs test scripts defined in `*.test.ts` files with coverage.
+- Spawns a local report-like website showing each test's real-time status and coverage using vitest-ui accessible at `http://localhost:4173/`
+- This script is similar to the vitest `npm run test:watch` script that watches for changes in the `*.test.ts` files but displays the result logs and coverage details in the local website rather than the command line.
+
+### `npm run report:view`
+
+> **NOTE:** This script requires running `npm test` first to generate a test report into the `/html` directory
+
+- Spins up a local web server accessible at `http://localhost:4174/`
+- Serves the website contents of a test report from the **/html** directory
+
 <br>
 
 ## 🐳 Docker Scripts

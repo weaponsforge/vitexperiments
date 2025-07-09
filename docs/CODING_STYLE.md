@@ -51,7 +51,10 @@ It follows the directory structure within the `/app` directory:
 > └─── 📄 index.ts<br>
 > └─ 📂 lib<br>
 > └─── 📂 config<br>
+> └───── 📄 setupTests.ts<br>
 > └─── 📂 hooks<br>
+> └─── 📂 schemas<br>
+> └───── 📄 User.schema.ts<br>
 > └─── 📂 services<br>
 > └───── 📄 apiRoutes.tsx<br>
 > └───── 📄 discussions.ts<br>
@@ -110,6 +113,7 @@ This folder contains publicly accessible media assets and data that can be serve
 
 - `/config` — Configuration files and setup definitions, such as settings for third-party integrations.
 - `/hooks` — Reusable React hooks that can be used across the app (e.g., `useDebounce()`). Also includes hooks used by `📂 components` like ui or layout.
+- `/schemas` — `zod` Schemas and other type definitions referenced across more than two (2) files or `📂 features`.
 - `/services` — Contains logic for making asynchronous HTTP requests (CRUD operations) to external RESTful APIs.
    - `apiRoutes.ts` — Centralized definitions for all remote API endpoint URLs used in the app.
 - `/store` — Contains state management logic (e.g., Zustand or Redux slices and definitions).
@@ -119,7 +123,7 @@ This folder contains publicly accessible media assets and data that can be serve
 
 Organizes self-contained features of the app. Each subfolder represents a complete, independent feature composed of related logic and UI components.
 
-- **Co-location** — Each feature folder may include its internal structure such as `/components`, `/hooks`, `/stores`, and `/styles`. Co-location simplifies finding feature-related files as the code base grows larger.
+- **Co-location** — Each feature folder may include its internal structure such as `/components`, `/hooks`, `/stores`, `/schemas` and `/styles`. Co-location simplifies finding feature-related files as the code base grows larger.
 
 - **Access Rules (Enforced by `no-restricted-imports` ESLint Rule):**
    - **🔒 From outside the `/features` folder**<br>
@@ -155,7 +159,14 @@ Contains generic custom CSS definitions used by the whole app.
 - Use **`LF` (Line Feed)** as the line ending format for all code and other files to ensure consistency across environments and platforms.
 - Use **arrow functions** instead of traditional function declarations when defining functions and methods. Only use `function()` definitions for specific cases.
 - Follow **camelCase** for naming variables, files, functions/methods and non-component folders.
+- Follow **PascalCase** for naming **Zod** schemas, TypeScript `types`, `interfaces`, `enums` and other TypeScript constructs.
+- Follow consistent file naming conventions based on content:
+   - Use `*.schema.ts` for files containing Zod schemas.
+   - Use `*.enum.ts` for files containing only enums.
+   - Use `*.interface.ts` for files containing only interfaces.
+   - Use `*.types.ts` for files that include a mix of types, interfaces, enums, or other related constructs.
 - Always define the **types** of function parameters and return values. Use TypeScript **interfaces** or **types** for generic parameters when applicable.
+   - Avoid `any` unless absolutely necessary (prefer `unknown`, `Record`, etc.)
 - Implement features using a **co-located structure** within the `📂 src/features` directory.
 - Define new **page-level components** by registering them in the `📄 /src/routes.ts` file.
 - Aim to keep each source file—whether a React component, hook, or utility script—**under approximately 250 lines of code**. If a file exceeds this size, **consider refactoring** it into smaller, more focused files to improve clarity and maintainability.
@@ -210,8 +221,13 @@ Contains generic custom CSS definitions used by the whole app.
 
 ### 🧪 Testing
 
-- > _Testing isn't a major focus for this starter project yet, but is intended to use **Vitest** and **React Testing Library** for future feature-level tests._
+> [!NOTE]
+> _Testing isn't a major focus for this starter project yet, but is intended to use **Vitest** and **React Testing Library** for future feature-level tests._
 
+- Place test files co-located with the component, hook, or script they test.
+- Name test files to match the target module, using the suffix: `*.test.ts` or `*.test.tsx`.
+   > **Example:** Button.tsx → Button.test.tsx
+- For now, **selectively write tests** for critical or global components, features, or business logic as needed.
 
 @weaponsforge<br>
 20250708
