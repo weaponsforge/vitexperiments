@@ -107,7 +107,7 @@ Styling with Tailwind CSS
 
    | Variable Name | Description |
    | --- | --- |
-   | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>Exclude in the `.env` file when working on development mode in localhost.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
+   | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>**Exclude** this in the `.env` file when **working on development mode in localhost**.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
    | CHOKIDAR_USEPOLLING | Enables hot reload on `nodemon` running inside Docker containers on a Windows host. Set it to true if running Docker Desktop with WSL2 on a Windows OS. |
    | CHOKIDAR_INTERVAL | Chokidar polling interval. Set it along with `CHOKIDAR_USEPOLLING=true` if running Docker Desktop with WSL2 on a Windows OS. The default value is `1000`. |
 
@@ -153,29 +153,35 @@ Using Node
 <summary>Using Docker</summary>
 <br>
 
+Usage with Docker is an alternate option to using Node directly from the [Usage](#-usage) section.
+
 > **IMPORTANT**
 > Ensure that port `3000` is free before proceeding.
 
-1. Build the image for local development.<br>
+### Build the Development Docker Image
+
+1. Set up the environment variables for the `/app` directory. Refer to the [Installation](#️-installation) section **# 3** for more information.
+
+2. Build the image for local development.<br>
    ```sh
    docker compose build --no-cache
    ```
 
    > **INFO:** Do this step only once during initial installation. Re-run this step if there will be changes to the Dockerfile or after installing new Node libraries.
 
-2. Run the container for local development.<br>
+3. Run the container for local development.<br>
    ```sh
    docker compose up
    ```
 
-3. Launch the local app website in a web browser at:<br>
+4. Launch the local app website in a web browser at:<br>
    ```
    http://localhost:3000
    ```
 
-4. Edit the source code and wait for changes to display in the web browser.
+5. Edit the source code and wait for changes to display in the web browser.
 
-5. To build the React app:<br>
+6. To build the React app:<br>
    - Ensure the container is running.
    - Open another command terminal and run:<br>
       ```sh
@@ -184,16 +190,35 @@ Using Node
 
       This command exports the build artifacts to the `/app/dist` directory.
 
-6. (Alternate) build command without using Docker compose:<br>
+7. (Alternate) build command without using Docker compose:<br>
    ```
    # Using PowerShell
    docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
-7. To stop the Docker container:<br>
+8. To stop the Docker container:<br>
    ```sh
    docker compose down
    ```
+
+### Use Pre-Built Development Docker Image
+
+This project deploys the latest **development** Docker image to Docker Hub on the creation of new Release/Tags. It is available at:
+
+https://hub.docker.com/r/weaponsforge/vitexperiments
+
+1. Pull the pre-built development Docker image using any of the two (2) options:
+   - Open a terminal and run:<br>
+      ```sh
+      docker pull weaponsforge/vitexperiments
+      ```
+
+   - Navigate to the `/vitexperiments` root project directory, then run:<br>
+      ```sh
+      docker compose pull
+      ```
+
+2. Run the development image. Follow the steps under [Build the Development Docker Image](#build-the-development-docker-image) starting from **step #3**.
 
 </details>
 <br>
@@ -254,7 +279,8 @@ docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/
 
 ### Firebase Hosting
 
-Follow these steps for manually deploying the static site to Firebase Hosting.
+<details>
+<summary>Follow these steps for manually deploying the static site to Firebase Hosting.</summary>
 
 #### Requirements
 
@@ -274,16 +300,50 @@ Follow these steps for manually deploying the static site to Firebase Hosting.
 6. Deploy the static site.<br>
 `firebase deploy --only hosting`
 
+</details>
+
 ## 🚀 Usage with GitHub Actions
 
-Add the following GitHub Actions "Secrets" for deploying the React app to the development environment (Firebase Hosting) on push or merge of PRs to the `dev` branch.
+### A. Development Deployment
 
-| Secret Name | Description |
+#### Deployment to Firebase Hosting
+
+This repository deploys the latest **development** website to Firebase Hosting at https://vitexperiments.web.app/ **on changes to the `dev` branch from push or PR merges**. Supply the following **Firebase-related GitHub Secrets** to enable deployment to Firebase Hosting. It requires a Firebase Account and an activated Firebase Hosting target website.
+
+### B. Production Deployment
+
+#### Deployment to GitHub Pages
+
+This repository deploys the latest website to the GitHub Pages website of this repository at https://weaponsforge.github.io/vitexperiments/ **on the creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the `VITE_PUBLIC_BASE_PATH` GitHub Secret to enable deployment to GitHub Pages. It also requires a GitHub Pages enabled for this repository and a `gh-pages` branch.
+
+> [!IMPORTANT]
+> Add the `VITE_PUBLIC_BASE_PATH` environment variable described in the [Installation - step # 3](#️-installation) section to GitHub Secrets.
+
+#### Deployment to Docker Hub
+
+This repository deploys the latest development Docker image `weaponsforge/vitexperiments` to Docker Hub on the **creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the following GitHub Secrets and Variable to enable deployment to Docker Hub. It requires a Docker Hub account.
+
+The Docker Hub image is available at:
+
+https://hub.docker.com/r/weaponsforge/vitexperiments
+
+### GitHub Secrets and Variables
+
+#### GitHub Secrets
+
+| GitHub Secret Name | Description |
 | --- | --- |
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
 | FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
-| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>**Exclude** this in the `.env` file when **working on development mode in localhost**.<br>Set its value to the sub-directory name where the exported Vite app is to be deployed, i.e. `/<YOUR_REPOSITORY_NAME>/` when deploying on a repository (sub-directory) of a root GitHub Pages site, i.e, on<br>`https://<YOUR_GITHUB_USERNAME>.github.io/<YOUR_REPOSITORY_NAME>` |
+| VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>eg., `/<YOUR_REPOSITORY_NAME>/` |
+
+#### GitHub Variables
+
+| GitHub Variable Name | Description |
+| --- | --- |
+| DOCKERHUB_USERNAME | Docker Hub username |
+| DOCKERHUB_TOKEN | Deploy token for the Docker Hub account |
 
 @weaponsforge<br>
 20250430<br>
