@@ -10,7 +10,9 @@ This document outlines the general React coding styles and guidelines for this r
    - [React Components](#️-react-components)
    - [Rendering Optimization](#-rendering-optimization)
    - [Code Documentation](#-code-documentation)
+   - [Linting and Formatting](#-linting-and-formatting)
    - [Use of External Libraries](#-use-of-external-libraries)
+   - [Testing](#-testing)
 
 ## 📚 Project Folder Structure
 
@@ -120,19 +122,19 @@ Organizes self-contained features of the app. Each subfolder represents a comple
 - **Co-location** — Each feature folder may include its internal structure such as `/components`, `/hooks`, `/stores`, and `/styles`. Co-location simplifies finding feature-related files as the code base grows larger.
 
 - **Access Rules (Enforced by `no-restricted-imports` ESLint Rule):**
-   - **🔒 From outside the `/features` folder**
-      - Only import feature entry components from the top-level @/features path.
-         ```typescript
-         ✅ import { About, Contact } from "@/features"
-         ❌ import About from "@/features/About/About"
-         ❌ import About from "../../features/About/About"
-         ```
-   - **🔒 From inside the `/features` folder**
-      - Use relative imports when referencing other components, either within the same feature or across features.
-         ```typescript
-         ❌ import { About, Contact } from "@/features"
-         ✅ import About from "../About/About"
-         ```
+   - **🔒 From outside the `/features` folder**<br>
+      Only import feature entry components from the top-level `@/features` path.
+      ```typescript
+      ✅ import { About, Contact } from "@/features"
+      ❌ import About from "@/features/About/About"
+      ❌ import About from "../../features/About/About"
+      ```
+   - **🔒 From inside the `/features` folder**<br>
+      Use relative imports when referencing other components, either within the same feature or across features.
+      ```typescript
+      ❌ import { About, Contact } from "@/features"
+      ✅ import About from "../About/About"
+       ```
 
 #### 📂 src/styles
 
@@ -152,11 +154,11 @@ Contains generic custom CSS definitions used by the whole app.
 
 - Use **`LF` (Line Feed)** as the line ending format for all code and other files to ensure consistency across environments and platforms.
 - Use **arrow functions** instead of traditional function declarations when defining functions and methods. Only use `function()` definitions for specific cases.
-- Follow **camelCase** for naming variables, files, and folders.
+- Follow **camelCase** for naming variables, files, functions/methods and non-component folders.
 - Always define the **types** of function parameters and return values. Use TypeScript **interfaces** or **types** for generic parameters when applicable.
 - Implement features using a **co-located structure** within the `📂 src/features` directory.
 - Define new **page-level components** by registering them in the `📄 /src/routes.ts` file.
-- Aim to keep each source file—whether a React component, hook, or utility script—**under approximately 300 lines of code**. If a file exceeds this size, **consider refactoring** it into smaller, more focused files to improve clarity and maintainability.
+- Aim to keep each source file—whether a React component, hook, or utility script—**under approximately 250 lines of code**. If a file exceeds this size, **consider refactoring** it into smaller, more focused files to improve clarity and maintainability.
 - Use **early `return` statements** to exit a hooks or functions as soon as possible when conditions aren't met, to avoid unnecessary processing and to keep the logic clean and efficient.
 - Store constant values (e.g., strings or numbers) in **well-named variables** to improve readability and maintainability.
    ```typescript
@@ -168,7 +170,7 @@ Contains generic custom CSS definitions used by the whole app.
 ### ⚛️ React Components
 
 - Use **arrow functions** instead of traditional function declarations when defining React components.
-- Name **component files and function names** using **PascalCase** (e.g., `FeatureOne.tsx`).
+- Name **component files and component folder names** using **PascalCase** (e.g., `FeatureOne.tsx`, `FeatureTwo/FeatureTwo.tsx`).
 - Keep React components focused on **UI (JSX/HTML)** with minimal logic. Whenever possible, separate logic and data handling into custom **React hooks** (`"containers"`), and use components solely for rendering.
 - Use **TypeScript interfaces or types** to define props instead of PropTypes.
 - Make good use of **component composition** — build small, focused components that can be composed together. Avoid defining multiple components in a single file.
@@ -187,6 +189,11 @@ Contains generic custom CSS definitions used by the whole app.
 - Add **minimal but meaningful inline comments** where necessary to clarify intent, especially for complex or non-obvious logic.
 - Use **descriptive and self-explanatory variable names** to reduce the need for excessive comments and improve overall code readability.
 
+### 🧹 Linting and Formatting
+
+- Linting is handled by **ESLint**, configured via `eslint.config.js`.
+- All code should pass `"npm run lint"` and `"npm run build"` before commit.
+
 ### 📦 Use of External Libraries
 
 - Strive to **minimize external dependencies**, especially for simple or easily implementable functionality (e.g., a function that sums two numbers).
@@ -200,6 +207,11 @@ Contains generic custom CSS definitions used by the whole app.
    - It has **small and lightweight footprint** (eg., about ~300KB-2MB unpacked) or if it supports **tree-shaking**.
    - The source code is **open, transparent, and actively maintained** (eg., few open GitHub Issues or PRs)
    - Even if not actively maintained, the library still **aligns with your needs** and is simple enough to extend or adapt for custom use (e.g., a JavaScript `class` that can be easily refactored or subclassed (`extend`) for custom use)
+
+### 🧪 Testing
+
+- > _Testing isn't a major focus for this starter project yet, but is intended to use **Vitest** and **React Testing Library** for future feature-level tests._
+
 
 @weaponsforge<br>
 20250708

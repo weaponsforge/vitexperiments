@@ -103,7 +103,7 @@ Styling with Tailwind CSS
    npm install
    ```
 
-3. **When using Docker:** (Optional) Initialize a `.env` file when working on a Windows OS host. Create a `.env` file from the `.env.example` file and uncomment/enable the `CHOKIDAR_USEPOLLING` and `CHOKIDAR_INTERVAL` variables.
+3. **When using Docker on a `Windows OS` host**: (Optional) Create a `.env` file from the `.env.example` file and uncomment/enable the `CHOKIDAR_USEPOLLING` and `CHOKIDAR_INTERVAL` variables to enable hot reload.
 
    | Variable Name | Description |
    | --- | --- |
@@ -146,6 +146,8 @@ Using Node
    # Runs tsc for checking type errors before building the app
    npm run build
    ```
+
+   > **INFO:** This project uses **ESLint** for code linting and formatting. Rules are defined in `eslint.config.js`.
 
 ## ⚡Alternate Usage
 
@@ -315,7 +317,7 @@ This repository deploys the latest **development** website to the Firebase Hosti
 
 #### Deployment to GitHub Pages
 
-This repository deploys the latest website to the GitHub Pages website of this repository at https://weaponsforge.github.io/vitexperiments/ **on the creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the `VITE_PUBLIC_BASE_PATH` GitHub Secret to enable deployment to GitHub Pages. It also requires a **GitHub Pages enabled** for this repository and a **`gh-pages` branch**.
+This repository deploys the latest website to the GitHub Pages website of this repository at https://weaponsforge.github.io/vitexperiments/ **on the creation of new Tags/Releases from the `main` branch** with GitHub Actions. Supply the `VITE_PUBLIC_BASE_PATH` GitHub Secret to enable deployment to GitHub Pages. It also requires **GitHub Pages enabled** for this repository and a **`gh-pages` branch**.
 
 > [!IMPORTANT]
 > Add the `VITE_PUBLIC_BASE_PATH` environment variable described in the [Installation - step # 3](#️-installation) section to GitHub Secrets.
@@ -346,6 +348,8 @@ https://hub.docker.com/r/weaponsforge/vitexperiments
 | GitHub Variable Name | Description |
 | --- | --- |
 | DOCKERHUB_USERNAME | Docker Hub username |
+
+<br>
 
 @weaponsforge<br>
 20250430<br>
