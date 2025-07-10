@@ -192,13 +192,19 @@ Usage with Docker is an alternate option to using Node directly from the [Usage]
 
       This command exports the build artifacts to the `/app/dist` directory.
 
-7. (Alternate) build command without using Docker compose:<br>
+7. To run tyests:<br>
+   ```sh
+   # More Docker NPM scripts are available
+   docker run exec -it weaponsforge-vitexperiments npm test
+   ```
+
+8. (Alternate) build command without using Docker compose:<br>
    ```
    # Using PowerShell
    docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
-8. To stop the Docker container:<br>
+9. To stop the Docker container:<br>
    ```sh
    docker compose down
    ```
@@ -289,7 +295,8 @@ These scripts allow optional Docker-related processes, such as enabling file wat
 <summary>Click to expand the list of available Docker-compatible Node scripts.</summary>
 
 <br>
-> 💡 **INFO:** Ensure the Docker container is running (see Run the container in [Alternate Usage](#alternate-usage)).
+
+> 💡 **INFO:** Ensure the Docker container is running (refer to "Running the container" in [Alternate Usage](#alternate-usage)).
 
 - **Run an NPM script using Docker compose**<br>
    `docker exec -it weaponsforge-vitexperiments <AVAILABLE_SCRIPT_OR_DOCKER_SCRIPT>`
