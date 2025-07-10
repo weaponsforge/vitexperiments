@@ -6,7 +6,7 @@ on:
     types: [published]
 
 jobs:
-  lint-export-client:
+  lint-export-app:
     name: Lint and Export client
     if: github.event.release.target_commitish == 'main'
     runs-on: ubuntu-latest
