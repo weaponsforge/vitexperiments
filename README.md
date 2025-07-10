@@ -192,13 +192,19 @@ Usage with Docker is an alternate option to using Node directly from the [Usage]
 
       This command exports the build artifacts to the `/app/dist` directory.
 
-7. (Alternate) build command without using Docker compose:<br>
+7. To run tests:<br>
+   ```sh
+   # More Docker NPM scripts are available
+   docker run exec -it weaponsforge-vitexperiments npm test
+   ```
+
+8. (Alternate) build command without using Docker compose:<br>
    ```
    # Using PowerShell
    docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
    ```
 
-8. To stop the Docker container:<br>
+9. To stop the Docker container:<br>
    ```sh
    docker compose down
    ```
@@ -253,14 +259,52 @@ Fixes lint errors.
 - It requires running `npm run build` first
 - (Currently not supported with the Docker setup)
 
+### `npm test`
+
+- Runs test scripts defined in `*.test.ts` files with coverage.
+- Generates a vitest test report into the `/html` directory.
+- Run npm `run report:view` to preview the generated report.
+
+### `npm run test:watch`
+
+Runs vitest in watch mode, watching file changes and errors to files linked with `*.test.ts` files.
+
+### `npm run test:ui`
+
+- Runs test scripts defined in `*.test.ts` files with coverage.
+- Spawns a local report-like website showing each test's real-time status and coverage using vitest-ui accessible at `http://localhost:4173/`
+- This script is similar to the vitest `npm run test:watch` script that watches for changes in the `*.test.ts` files but displays the result logs and coverage details in the local website rather than the command line.
+
+### `npm run report:view`
+
+> **NOTE:** This script requires running `npm test` first to generate a test report into the `/html` directory
+
+- Spins up a local web server accessible at `http://localhost:4174/`
+- Serves the website contents of a test report from the **/html** directory
+
 <br>
 
 ## 🐳 Docker Scripts
 
-These Node scripts enable processing the local development Vite-React app inside a Docker container.
+These scripts allow optional Docker-related processes, such as enabling file watching in Docker containers running in Windows WSL2 and others.
+
+> [!TIP]
+> Scripts with a `":win"` suffix indicate compatibility for Windows Docker running in WSL2.
 
 <details>
 <summary>Click to expand the list of available Docker-compatible Node scripts.</summary>
+
+<br>
+
+> 💡 **INFO:** Ensure the Docker container is running (refer to "Running the container" in [Alternate Usage](#alternate-usage)).
+
+- **Run an NPM script using Docker compose**<br>
+   `docker exec -it weaponsforge-vitexperiments <AVAILABLE_SCRIPT_OR_DOCKER_SCRIPT>`
+
+- **Run an NPM script using only Docker**<br>
+```sh
+docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --rm weaponsforge/vitexperiments <AVAILABLE_SCRIPT_OR_DOCKER_SCRIPT>
+```
 
 ### `npm run docker:dev`
 
@@ -273,6 +317,33 @@ Builds the React app within a Docker container into the `/app/dist` directory af
 ```sh
 docker run -it -v ${pwd}/app:/opt/app -v /opt/app/node_modules --env-file ./app/.env --rm weaponsforge/vitexperiments npm run docker:build
 ```
+
+### `npm run docker:test:ui`
+
+- Docker command counterpart of the `npm run test:ui` script, compatible with containers running in **Linux OS**.
+- Runs test scripts defined in `*.test.ts` files in watch mode with coverage from a container.
+- Spawns a local report-like website showing each test's real-time status and coverage using vitest-ui accessible at `http://localhost:51204/__vitest__/`.
+
+### `npm run docker:report:view`
+
+> **NOTE:** This script requires running `npm test` first to generate a test report into the `/html` directory
+
+- Docker command counterpart of the `npm run report:view` script.
+- Spins up a local web server accessible at `http://localhost:4174/`
+- Serves the website contents of a test report from the host's **/html** directory
+
+### `npm run docker:test:watch:win`
+
+- Docker counterpart of the `npm test:watch` script for running in **Windows OS** hosts.
+- Sets the `--no-open` flag when running vitest in watch mode inside Docker containers running in **Windows WSL2**, preventing the `"Error: spawn xdg-open ENOENT"` terminal error.
+- Watches file changes and errors to files linked with `*.test.ts` files.
+
+### `npm run docker:test:ui:win`
+
+- Docker counterpart of the `npm run test:ui` script for running in **Windows OS** hosts.
+- Sets the `--no-open` flag when running vitest in watch mode inside Docker containers running in **Windows WSL2**, preventing the `"Error: spawn xdg-open ENOENT"` terminal error.
+- Runs test scripts defined in `*.test.ts` files in watch mode with coverage
+- Spawns a local report-like website showing each test's real-time status and coverage using vitest-ui accessible at `http://localhost:51204/__vitest__/`.
 
 </details>
 <br>
