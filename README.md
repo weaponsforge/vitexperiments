@@ -192,7 +192,7 @@ Usage with Docker is an alternate option to using Node directly from the [Usage]
 
       This command exports the build artifacts to the `/app/dist` directory.
 
-7. To run tyests:<br>
+7. To run tests:<br>
    ```sh
    # More Docker NPM scripts are available
    docker run exec -it weaponsforge-vitexperiments npm test
