@@ -14,7 +14,9 @@ services:
       - ./app/:/opt/app
       - /opt/app/node_modules
     ports:
-      - "3000:3000"
+      - "3000:3000"     # React app web server
+      - "4173:4173"     # vitest --ui web server
+      - "51204:51204"   # vitest ui reports preview web server
 
 networks:
   weaponsforge-vitexperiments:

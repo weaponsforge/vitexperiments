@@ -45,9 +45,6 @@ export default defineConfig({
         'dist/',
         'html/'
       ]
-    },
-    ui: {
-      port: 3003
     }
   },
 })

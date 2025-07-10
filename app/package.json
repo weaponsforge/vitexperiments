@@ -15,10 +15,14 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui --po",
+    "test:ui": "vitest --ui",
     "report:view": "vite preview --outDir html",
     "docker:dev": "vite --port=3000 --host",
-    "docker:build": "export NODE_ENV=production && npm run build"
+    "docker:build": "export NODE_ENV=production && npm run build",
+    "docker:report:view": "vite preview --outDir html --host 0.0.0.0",
+    "docker:test:watch:win": "vitest --no-open",
+    "docker:test:ui": "vitest --ui --api.host 0.0.0.0",
+    "docker:test:ui:win": "vitest --ui --api.host 0.0.0.0 --no-open"
   },
   "dependencies": {
     "axios": "^1.10.0",

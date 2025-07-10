@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 
 import Home from "./Home"
-import { IUseHome } from "./hooks/useHome"
+import { IUseHomeReturn } from "./hooks/useHome"
 import * as useHomeModule from "./hooks/useHome"
 
 vi.mock("../hooks/useHome")
@@ -10,7 +10,7 @@ afterEach(() => {
   vi.clearAllMocks()
 })
 
-const renderHomeWithMock = (returnDataOverride: Partial<IUseHome>) => {
+const renderHomeWithMock = (returnDataOverride: Partial<IUseHomeReturn>) => {
   vi.spyOn(useHomeModule, "default").mockReturnValue({
     data: [],
     error: null,

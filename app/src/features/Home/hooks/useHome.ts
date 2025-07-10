@@ -8,7 +8,7 @@ import { PLACEHOLDER_TEXT } from "@/lib/services/apiRoutes"
 export const ERROR_PARSING_HOME_DATA = "Error parsing data"
 
 /** Describes the return object shape of `useHome()` */
-export interface IUseHome {
+export interface IUseHomeReturn {
   /** Text content as paragraphs per item */
   data: string[];
   /** Data fetching or parsing error text */
@@ -18,7 +18,7 @@ export interface IUseHome {
 }
 
 /** Manages the `@/features/Home` component */
-const useHome = (): IUseHome => {
+const useHome = (): IUseHomeReturn => {
   const [dataError, setDataError] = useState<string | null>(null)
   const [data, setData] = useState<string[]>([])
 
