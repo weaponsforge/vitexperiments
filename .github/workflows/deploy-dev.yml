@@ -8,7 +8,7 @@ on:
       - dev
 
 jobs:
-  lint-client:
+  lint-export-app:
     name: Lint and Export client
     runs-on: ubuntu-latest
     steps:
@@ -46,9 +46,51 @@ jobs:
             app/firebase.json
           retention-days: 3
 
+  test-app:
+    name: Unit Tests
+    needs: lint-export-app
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: v20.15.0
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Test
+        run: |
+          cd app
+          npm test
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: app/html/junit.xml
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: app/html/junit.xml
+          check_name: "Test Results"
+
   deploy-client:
     name: Deploy Client to Firebase Hosting
-    needs: lint-client
+    needs: [lint-export-app, test-app]
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact

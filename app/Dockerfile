@@ -20,5 +20,5 @@ RUN mkdir /opt/app/node_modules/.vite \
   && chown -R node:node /opt/app/node_modules/.vite \
   && chown -R node:node /opt/app/node_modules/.tmp
 USER node
-EXPOSE 3000
+EXPOSE 3000 4173 51204
 CMD ["npm", "run", "docker:dev"]
