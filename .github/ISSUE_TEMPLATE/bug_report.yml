@@ -32,26 +32,17 @@ body:
   - type: textarea
     attributes:
       label: Provide environment information
-      description: Please run `npx next info` in the root directory of your project and paste the results.
+      description: Please run `npm run info` in the `/app` directory of your project and paste the results.
       render: bash
       placeholder: |
-        Operating System:
-          Platform: linux
-          Arch: x64
-          Version: #1 SMP Tue Nov 5 00:21:55 UTC 2024
-        Binaries:
-          Node: 24.11.0
-          npm: 11.6.1
-          Yarn: N/A
-          pnpm: N/A
-        Relevant Packages:
-          next: 16.2.1 // Latest available version is detected (16.2.1).
-          eslint-config-next: N/A
-          react: 19.2.4
-          react-dom: 19.2.4
-          typescript: 5.9.3
-        Next.js Config:
-          output: N/A
+        Platform: (eg., Linux, Windows, etc)
+        Node version: v24.11.0
+        Platform: win32
+        Arch: x64
+        V8 version: 13.6.233.10-node.28
+        npm version: 11.6.1
+    validations:
+      required: true
 
     validations:
       required: true

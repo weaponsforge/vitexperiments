@@ -36,7 +36,7 @@ The folder structure, setup, and general coding style reflect how I like to [org
 ## 📋 Requirements
 
 1. NodeJS LTS v24 or higher
-   ```
+   ```text
    Recommended:
    node: v24.11.0
    npm: v11.6.1
@@ -63,7 +63,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the
 | [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.13.2` | Manages client-side routing for general React apps |
 | [TypeScript](https://www.npmjs.com/package/typescript) | `v5.7.2` | For creating type definitions |
 | [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.2.2` | Generic, composable utility classes for CSS styling |
-| [Vitest]() | `v3.2.4` | Testing framework powered by Vite |
+| [Vitest](https://www.npmjs.com/package/vitest) | `v3.2.4` | Testing framework powered by Vite |
 
 #### CSS Styling
 

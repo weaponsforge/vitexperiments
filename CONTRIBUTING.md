@@ -5,7 +5,7 @@ Welcome to the **vitexperiments** repository! We're excited to have you contribu
 To ensure a smooth contribution process for everyone, please follow these guidelines.
 
 > [!NOTE]
->  **Before Submitting**
+> **Before Submitting**
 >
 > Check if there are other similar [PRs](https://github.com/weaponsforge/vitexperiments/pulls).
 >
