@@ -290,6 +290,17 @@ Runs vitest in watch mode, watching file changes and errors to files linked with
 - Spins up a local web server accessible at `http://localhost:4174/`
 - Serves the website contents of a test report from the **/html** directory
 
+### `npm run info`
+
+Logs the current development environment information.
+
+### `npm run base64`
+
+Converts an input file to base64 format.
+
+Example usage:<br>
+`npm run base64 -- input=./path/to/input.txt output=./path/to/output.txt`
+
 <br>
 
 ## 🐳 Docker Scripts
@@ -419,7 +430,7 @@ https://hub.docker.com/r/weaponsforge/vitexperiments
 | DOCKERHUB_TOKEN | Deploy token for the Docker Hub account |
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
-| FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
+| GCP_SA_KEY | **base64 encoded** Firebase project service account key with only the **Firebase Hosting Admin** role enabled for deploying Hosting files. |
 | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>eg., `/<YOUR_REPOSITORY_NAME>/` |
 
 #### GitHub Variables
