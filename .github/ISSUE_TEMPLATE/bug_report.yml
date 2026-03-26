@@ -44,8 +44,6 @@ body:
     validations:
       required: true
 
-    validations:
-      required: true
   - type: dropdown
     attributes:
       label: Which area(s) are affected? (Select all that apply)

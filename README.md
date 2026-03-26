@@ -129,7 +129,7 @@ Using Node
    ```
 
 2. Launch the local app website in a web browser at:<br>
-   ```
+   ```sh
    http://localhost:3000
    ```
 
@@ -185,7 +185,7 @@ Usage with Docker is an alternate option to using Node directly from the [Usage]
    ```
 
 4. Launch the local app website in a web browser at:<br>
-   ```
+   ```sh
    http://localhost:3000
    ```
 
