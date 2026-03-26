@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - dev
-      - fix/dev-deployment
 
 jobs:
   lint-export-app:
