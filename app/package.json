@@ -23,7 +23,8 @@
     "docker:test:watch:win": "vitest --no-open",
     "docker:test:ui": "vitest --ui --api.host 0.0.0.0",
     "docker:test:ui:win": "vitest --ui --api.host 0.0.0.0 --no-open",
-    "info": "node ./scripts/envinfo.js"
+    "info": "node ./scripts/envinfo",
+    "base64": "node ./scripts/base64"
   },
   "dependencies": {
     "axios": "^1.13.6",
