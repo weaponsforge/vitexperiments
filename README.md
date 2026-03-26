@@ -9,6 +9,13 @@ The folder structure, setup, and general coding style reflect how I like to [org
 - **Production:** https://weaponsforge.github.io/vitexperiments/
 - **Development:** https://vitexperiments.web.app/
 
+<div align="center">
+
+![screenshot](/docs/screenshot.png)
+
+</div>
+<br>
+
 ### Table of Contents
 
 <details>
@@ -28,11 +35,11 @@ The folder structure, setup, and general coding style reflect how I like to [org
 
 ## 📋 Requirements
 
-1. NodeJS LTS v20 or higher
-   ```
+1. NodeJS LTS v24 or higher
+   ```text
    Recommended:
-   node: v20.15.0
-   npm: v10.7.0
+   node: v24.11.0
+   npm: v11.6.1
    ```
 
 2. (Optional) Docker
@@ -52,10 +59,11 @@ We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the
 | Library | Version | Description |
 | --- | --- | --- |
 | [Vite](https://www.npmjs.com/package/vite) | `v6.3.1` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
-| [React](https://www.npmjs.com/package/react) | `v19` | Library for creating reusable/composable and interactive components |
-| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.6.3` | Manages client-side routing for general React apps |
+| [React](https://www.npmjs.com/package/react) | `v19.2.4` | Library for creating reusable/composable and interactive components |
+| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.13.2` | Manages client-side routing for general React apps |
 | [TypeScript](https://www.npmjs.com/package/typescript) | `v5.7.2` | For creating type definitions |
-| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.1.1` | Generic, composable utility classes for CSS styling |
+| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.2.2` | Generic, composable utility classes for CSS styling |
+| [Vitest](https://www.npmjs.com/package/vitest) | `v3.2.4` | Testing framework powered by Vite |
 
 #### CSS Styling
 
@@ -64,8 +72,8 @@ Styling with Tailwind CSS
 | Library | Version | Description |
 | --- | --- | --- |
 | [clsx](https://www.npmjs.com/package/clsx) | `v2.1.1` | Utility for constructing class name strings conditionally
-| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.3.1` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
-| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.3.5` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
+| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.5.0` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
+| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.4.0` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
 
 #### Code Linting
 
@@ -77,16 +85,16 @@ Styling with Tailwind CSS
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [SWR](https://www.npmjs.com/package/swr) | `v2.3.4` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
-| [Axios](https://www.npmjs.com/package/axios) | `v1.10.0` | Promise-based HTTP data fetching library
+| [SWR](https://www.npmjs.com/package/swr) | `v2.4.1` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
+| [Axios](https://www.npmjs.com/package/axios) | `v1.13.6` | Promise-based HTTP data fetching library
 
 #### State and Data Management
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.6` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
-| [Zod](https://www.npmjs.com/package/zod) | `v3.25.75` | Scalable Typescript-first data validation using schemas
-| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.60.0` | React hooks for managing form submission data validation
+| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.12` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
+| [Zod](https://www.npmjs.com/package/zod) | `v4.3.6` | Scalable Typescript-first data validation using schemas
+| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.72.0` | React hooks for managing form submission data validation
 
 
 </details>
@@ -121,7 +129,7 @@ Using Node
    ```
 
 2. Launch the local app website in a web browser at:<br>
-   ```
+   ```sh
    http://localhost:3000
    ```
 
@@ -177,7 +185,7 @@ Usage with Docker is an alternate option to using Node directly from the [Usage]
    ```
 
 4. Launch the local app website in a web browser at:<br>
-   ```
+   ```sh
    http://localhost:3000
    ```
 
@@ -281,6 +289,17 @@ Runs vitest in watch mode, watching file changes and errors to files linked with
 
 - Spins up a local web server accessible at `http://localhost:4174/`
 - Serves the website contents of a test report from the **/html** directory
+
+### `npm run info`
+
+Logs the current development environment information.
+
+### `npm run base64`
+
+Converts an input file to base64 format.
+
+Example usage:<br>
+`npm run base64 -- input=./path/to/input.txt output=./path/to/output.txt`
 
 <br>
 
@@ -411,7 +430,7 @@ https://hub.docker.com/r/weaponsforge/vitexperiments
 | DOCKERHUB_TOKEN | Deploy token for the Docker Hub account |
 | FIREBASE_PROJECT | Firebase project ID |
 | FIREBASE_HOSTING | Firebase Hosting name under the `FIREBASE_PROJECT` |
-| FIREBASE_TOKEN | Firebase CI token used for deploying the React `/app` to Firebase Hosting. This is obtained by signing-in to the Firebase CLI with `"firebase login:ci"`. |
+| GCP_SA_KEY | **base64 encoded** Firebase project service account key with only the **Firebase Hosting Admin** role enabled for deploying Hosting files. |
 | VITE_PUBLIC_BASE_PATH | Root directory path name that Vite uses for assets, media and client-side routing for the app.<br>eg., `/<YOUR_REPOSITORY_NAME>/` |
 
 #### GitHub Variables

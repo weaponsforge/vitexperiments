@@ -228,6 +228,7 @@ Contains generic custom CSS definitions used by the whole app.
 - Name test files to match the target module, using the suffix: `*.test.ts` or `*.test.tsx`.
    > **Example:** Button.tsx → Button.test.tsx
 - For now, **selectively write tests** for critical or global components, features, or business logic as needed.
+- Aim for E2E tests at the post-deployment stage.
 
 @weaponsforge<br>
 20250708
