@@ -16,7 +16,9 @@ export const getargs = ({
   const args = process.argv.slice(2)
 
   const inputObject = args.reduce((list, item) => {
-    const [key, value] = item.split("=")
+    const separatorIndex = item.indexOf("=")
+    const key = separatorIndex >= 0 ? item.slice(0, separatorIndex) : item
+    const value = separatorIndex >= 0 ? item.slice(separatorIndex + 1) : undefined
 
     if (params.includes(key)) {
       list[key] = value

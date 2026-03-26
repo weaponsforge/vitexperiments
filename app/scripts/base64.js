@@ -12,6 +12,9 @@ import { getargs } from "./getargs.js"
  * ```
  */
 const main = async () => {
+  let readHandle
+  let writeHandle
+
   try {
     const args = getargs({
       params: ["input", "output"]
@@ -20,8 +23,8 @@ const main = async () => {
     const { input: inputFile, output: outputFilePath } = args
 
     // File handles
-    const readHandle = await open(inputFile)
-    const writeHandle = await open(outputFilePath, "w")
+    readHandle = await open(inputFile)
+    writeHandle = await open(outputFilePath, "w")
 
     // Streams
     const readable = readHandle.createReadStream({ encoding: "base64" })
@@ -29,13 +32,15 @@ const main = async () => {
 
     // Write converted base64 to file
     await pipeline(readable, writeable)
-
-    await Promise.all([
+  } catch (err) {
+    console.error(`[ERROR]: ${err.message}`)
+    /* eslint-disable no-undef */
+    process.exitCode = 1
+  } finally {
+    await Promise.allSettled([
       readHandle.close(),
       writeHandle.close()
     ])
-  } catch (err) {
-    console.error(`[ERROR]: ${err.message}`)
   }
 }
 
