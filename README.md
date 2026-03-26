@@ -35,7 +35,7 @@ The folder structure, setup, and general coding style reflect how I like to [org
 
 ## 📋 Requirements
 
-1. NodeJS LTS v20 or higher
+1. NodeJS LTS v24 or higher
    ```
    Recommended:
    node: v24.11.0
