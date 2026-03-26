@@ -9,6 +9,13 @@ The folder structure, setup, and general coding style reflect how I like to [org
 - **Production:** https://weaponsforge.github.io/vitexperiments/
 - **Development:** https://vitexperiments.web.app/
 
+<div align="center">
+
+![screenshot](/docs/screenshot.png)
+
+</div>
+<br>
+
 ### Table of Contents
 
 <details>
@@ -52,10 +59,11 @@ We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the
 | Library | Version | Description |
 | --- | --- | --- |
 | [Vite](https://www.npmjs.com/package/vite) | `v6.3.1` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
-| [React](https://www.npmjs.com/package/react) | `v19` | Library for creating reusable/composable and interactive components |
-| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.6.3` | Manages client-side routing for general React apps |
+| [React](https://www.npmjs.com/package/react) | `v19.2.4` | Library for creating reusable/composable and interactive components |
+| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.13.2` | Manages client-side routing for general React apps |
 | [TypeScript](https://www.npmjs.com/package/typescript) | `v5.7.2` | For creating type definitions |
-| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.1.1` | Generic, composable utility classes for CSS styling |
+| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.2.2` | Generic, composable utility classes for CSS styling |
+| [Vitest]() | `v3.2.4` | Testing framework powered by Vite |
 
 #### CSS Styling
 
@@ -64,8 +72,8 @@ Styling with Tailwind CSS
 | Library | Version | Description |
 | --- | --- | --- |
 | [clsx](https://www.npmjs.com/package/clsx) | `v2.1.1` | Utility for constructing class name strings conditionally
-| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.3.1` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
-| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.3.5` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
+| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.5.0` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
+| [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.4.0` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
 
 #### Code Linting
 
@@ -77,16 +85,16 @@ Styling with Tailwind CSS
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [SWR](https://www.npmjs.com/package/swr) | `v2.3.4` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
-| [Axios](https://www.npmjs.com/package/axios) | `v1.10.0` | Promise-based HTTP data fetching library
+| [SWR](https://www.npmjs.com/package/swr) | `v2.4.1` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
+| [Axios](https://www.npmjs.com/package/axios) | `v1.13.6` | Promise-based HTTP data fetching library
 
 #### State and Data Management
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.6` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
-| [Zod](https://www.npmjs.com/package/zod) | `v3.25.75` | Scalable Typescript-first data validation using schemas
-| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.60.0` | React hooks for managing form submission data validation
+| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.12` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
+| [Zod](https://www.npmjs.com/package/zod) | `v4.3.6` | Scalable Typescript-first data validation using schemas
+| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.72.0` | React hooks for managing form submission data validation
 
 
 </details>

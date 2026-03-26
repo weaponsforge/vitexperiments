@@ -48,7 +48,6 @@ jobs:
 
   test-app:
     name: Unit Tests
-    needs: lint-export-app
     runs-on: ubuntu-latest
     permissions:
       checks: write
