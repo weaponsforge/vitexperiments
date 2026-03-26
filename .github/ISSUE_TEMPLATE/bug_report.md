@@ -30,8 +30,8 @@ If applicable, add screenshots to help explain your problem.
 please complete the applicable information:
 
 - OS: [e.g. Windows, Linux, Mac]
-- Node version [e.g. node 20.15.0]
-- npm version [e.g. npm 10.7.0]
+- Node version [e.g. node 24.11.0]
+- npm version [e.g. npm 11.6.1]
 - Release Tag Version [e.g. v2.1.0]
 
 ### Additional context

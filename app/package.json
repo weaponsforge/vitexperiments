@@ -5,7 +5,7 @@
   "type": "module",
   "description": "React app template created with Vite",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "vite",

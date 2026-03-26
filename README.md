@@ -31,8 +31,8 @@ The folder structure, setup, and general coding style reflect how I like to [org
 1. NodeJS LTS v20 or higher
    ```
    Recommended:
-   node: v20.15.0
-   npm: v10.7.0
+   node: v24.11.0
+   npm: v11.6.1
    ```
 
 2. (Optional) Docker
