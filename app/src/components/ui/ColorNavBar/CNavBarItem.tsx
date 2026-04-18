@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
+
+import { cn } from '@/lib/utils'
 
 interface ICNavBarItem {
   /** Flag indicating if the item is selected */
@@ -11,11 +12,11 @@ interface ICNavBarItem {
 }
 
 const CNavBarItem = (props: ICNavBarItem) => {
-  const { isSelected = false, label = "", route = "/" } = props
+  const { isSelected = false, label = '', route = '/' } = props
 
   const linkStyle = cn(
-    "self-center sm:self-auto text-stone-900 text-sm border-transparent border-b-2 hover:border-stone-800 hover:border-b-2 uppercase",
-    isSelected && "border-stone-800"
+    'self-center sm:self-auto text-stone-900 text-sm border-transparent border-b-2 hover:border-stone-800 hover:border-b-2 uppercase',
+    isSelected && 'border-stone-800',
   )
 
   return (

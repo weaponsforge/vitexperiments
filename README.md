@@ -1,6 +1,6 @@
 ## vitexperiments
 
-This repository contains a simple React frontend application built with [⚡Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
+This repository contains a simple React frontend application built with ⚡[Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
 
 The folder structure, setup, and general coding style reflect how I like to [organize TypeScript React apps](/docs/CODING_STYLE.md) built with Vite, or for any React projects that use **React Router** for routing (including the retired [🪦Create-React-App](https://create-react-app.dev/docs/getting-started/) (CRA)).
 
@@ -58,12 +58,12 @@ We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Vite](https://www.npmjs.com/package/vite) | `v6.3.1` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
-| [React](https://www.npmjs.com/package/react) | `v19.2.4` | Library for creating reusable/composable and interactive components |
-| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.13.2` | Manages client-side routing for general React apps |
-| [TypeScript](https://www.npmjs.com/package/typescript) | `v5.7.2` | For creating type definitions |
+| [Vite](https://www.npmjs.com/package/vite) | `v8.0.8` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
+| [React](https://www.npmjs.com/package/react) | `v19.2.5` | Library for creating reusable/composable and interactive components |
+| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.14.1` | Manages client-side routing for general React apps |
+| [TypeScript](https://www.npmjs.com/package/typescript) | `v6.0.3` | For creating type definitions |
 | [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.2.2` | Generic, composable utility classes for CSS styling |
-| [Vitest](https://www.npmjs.com/package/vitest) | `v3.2.4` | Testing framework powered by Vite |
+| [Vitest](https://www.npmjs.com/package/vitest) | `v4.1.4` | Testing framework powered by Vite |
 
 #### CSS Styling
 
@@ -79,14 +79,14 @@ Styling with Tailwind CSS
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [ESlint](https://www.npmjs.com/package/eslint) | `v9.22.0` | Enforces coding formats, rules and preferences
+| [ESlint](https://www.npmjs.com/package/eslint) | `v10.2.1` | Enforces coding formats, rules and preferences |
 
 #### Data Fetching
 
 | Library | Version | Description |
 | --- | --- | --- |
 | [SWR](https://www.npmjs.com/package/swr) | `v2.4.1` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
-| [Axios](https://www.npmjs.com/package/axios) | `v1.13.6` | Promise-based HTTP data fetching library
+| [Axios](https://www.npmjs.com/package/axios) | `v1.15.0` | Promise-based HTTP data fetching library |
 
 #### State and Data Management
 
@@ -94,7 +94,7 @@ Styling with Tailwind CSS
 | --- | --- | --- |
 | [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.12` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
 | [Zod](https://www.npmjs.com/package/zod) | `v4.3.6` | Scalable Typescript-first data validation using schemas
-| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.72.0` | React hooks for managing form submission data validation
+| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.72.1` | React hooks for managing form submission data validation |
 
 
 </details>

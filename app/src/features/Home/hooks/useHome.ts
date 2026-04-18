@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react"
-import useSWR from "swr"
+import useSWR from 'swr'
 
-import { fetchPlaceholderText } from "@/lib/services/placeholder"
-import { HomeDataSchema } from "../schemas/Home.schema"
-import { PLACEHOLDER_TEXT } from "@/lib/services/apiRoutes"
+import { PLACEHOLDER_TEXT } from '@/lib/services/apiRoutes'
+import { fetchPlaceholderText } from '@/lib/services/placeholder'
 
-export const ERROR_PARSING_HOME_DATA = "Error parsing data"
+import { HomeDataSchema } from '../schemas/Home.schema'
+
+export const ERROR_PARSING_HOME_DATA = 'Error parsing data'
 
 /** Describes the return object shape of `useHome()` */
 export interface IUseHomeReturn {
@@ -19,33 +19,14 @@ export interface IUseHomeReturn {
 
 /** Manages the `@/features/Home` component */
 const useHome = (): IUseHomeReturn => {
-  const [dataError, setDataError] = useState<string | null>(null)
-  const [data, setData] = useState<string[]>([])
-
   const { data: response, error, isLoading } = useSWR(PLACEHOLDER_TEXT, fetchPlaceholderText)
-
-  useEffect(() => {
-    if (isLoading) return
-
-    if (error) {
-      setDataError(error?.message)
-      return
-    }
-
-    const result = HomeDataSchema.safeParse(response?.data)
-
-    if (!result.success) {
-      setDataError(ERROR_PARSING_HOME_DATA)
-      return
-    }
-
-    setData(response!.data)
-  }, [error, isLoading, response])
+  const result = HomeDataSchema.safeParse(response?.data)
+  const hasError = Boolean(error) || (!isLoading && !result.success)
 
   return {
-    data,
-    error: dataError,
-    isLoading
+    data: result.success ? result.data : [],
+    error: hasError ? ERROR_PARSING_HOME_DATA : null,
+    isLoading,
   }
 }
 

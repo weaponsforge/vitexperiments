@@ -1,17 +1,17 @@
-import { renderHook, waitFor } from "@testing-library/react"
-import { type Mock } from "vitest"
-import useSWR from "swr"
+import { renderHook, waitFor } from '@testing-library/react'
+import useSWR from 'swr'
+import { type Mock } from 'vitest'
 
-import useHome from "./useHome"
-import { ERROR_PARSING_HOME_DATA, IUseHomeReturn } from "./useHome"
+import useHome from './useHome'
+import { ERROR_PARSING_HOME_DATA, type IUseHomeReturn } from './useHome'
 
 interface IUseHomeMock extends IUseHomeReturn {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
 }
 
-vi.mock("swr", () => ({
-  default: vi.fn()
+vi.mock('swr', () => ({
+  default: vi.fn(),
 }))
 
 const mockUseSWR = (returnValue: IUseHomeMock) => {
@@ -22,16 +22,16 @@ afterEach(() => {
   vi.clearAllMocks()
 })
 
-describe("useHome() hook", () => {
-  it("should return parsing error on invalid response", async() => {
+describe('useHome() hook', () => {
+  it('should return parsing error on invalid response', async() => {
     const mockResponse = {
-      data: { not: "expected format" }
+      data: { not: 'expected format' },
     }
 
     mockUseSWR({
       data: mockResponse,
       error: null,
-      isLoading: false
+      isLoading: false,
     })
 
     // Run the hook

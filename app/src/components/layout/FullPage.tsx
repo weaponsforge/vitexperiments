@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom'
 
-import ColorNavBar from "@/components/ui/ColorNavBar"
-import Footer from "@/components/ui/Footer"
+import ColorNavBar from '@/components/ui/ColorNavBar'
+import Footer from '@/components/ui/Footer'
 
 const FullPage = () => {
   return (
