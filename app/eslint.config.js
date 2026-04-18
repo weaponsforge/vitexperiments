@@ -133,6 +133,7 @@ export default defineConfig([
         },
       ],
       'import/newline-after-import': ['error', { count: 1 }],
+      'import/no-commonjs': 'error',
       'react/jsx-indent': ['error', 2],
       'react/jsx-indent-props': ['error', 2],
       'react/react-in-jsx-scope': 'off',
