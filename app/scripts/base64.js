@@ -38,8 +38,8 @@ const main = async () => {
     process.exitCode = 1
   } finally {
     await Promise.allSettled([
-      readHandle.close(),
-      writeHandle.close(),
+      readHandle?.close?.(),
+      writeHandle?.close?.(),
     ])
   }
 }
