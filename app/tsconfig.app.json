@@ -24,10 +24,20 @@
     "noUncheckedSideEffectImports": true,
 
     /* Path alias */
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/hooks/*": ["./src/lib/hooks/*"],
+      "@/lib/*": ["./src/lib/lib/*"],
+      "@/services/*": ["./src/lib/services/*"],
+      "@/store/*": ["./src/lib/store/*"],
+      "@/utils/*": ["./src/lib/utils/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "dist",
+    "html",
+    "node_modules"
+  ]
 }
