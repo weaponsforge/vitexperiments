@@ -20,10 +20,11 @@ export interface IUseHomeReturn {
 const useHome = (): IUseHomeReturn => {
   const { data: response, error, isLoading } = useSWR(PLACEHOLDER_TEXT, fetchPlaceholderText)
   const result = HomeDataSchema.safeParse(response?.data)
+  const hasError = Boolean(error) || (!isLoading && !result.success)
 
   return {
     data: result.success ? result.data : [],
-    error: error ? ERROR_PARSING_HOME_DATA : null,
+    error: hasError ? ERROR_PARSING_HOME_DATA : null,
     isLoading
   }
 }
