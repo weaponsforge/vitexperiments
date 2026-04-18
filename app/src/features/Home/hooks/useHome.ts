@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react"
 import useSWR from "swr"
 
 import { fetchPlaceholderText } from "@/lib/services/placeholder"
@@ -19,32 +18,13 @@ export interface IUseHomeReturn {
 
 /** Manages the `@/features/Home` component */
 const useHome = (): IUseHomeReturn => {
-  const [dataError, setDataError] = useState<string | null>(null)
-  const [data, setData] = useState<string[]>([])
-
   const { data: response, error, isLoading } = useSWR(PLACEHOLDER_TEXT, fetchPlaceholderText)
-
-  useEffect(() => {
-    if (isLoading) return
-
-    if (error) {
-      setDataError(error?.message)
-      return
-    }
-
-    const result = HomeDataSchema.safeParse(response?.data)
-
-    if (!result.success) {
-      setDataError(ERROR_PARSING_HOME_DATA)
-      return
-    }
-
-    setData(response!.data)
-  }, [error, isLoading, response])
+  const result = HomeDataSchema.safeParse(response?.data)
+  const hasError = Boolean(error) || (!isLoading && !result.success)
 
   return {
-    data,
-    error: dataError,
+    data: result.success ? result.data : [],
+    error: hasError ? ERROR_PARSING_HOME_DATA : null,
     isLoading
   }
 }
