@@ -10,13 +10,13 @@
  */
 export const getargs = ({
   params = [],
-  optional = []
+  optional = [],
 }) => {
-  /* eslint-disable no-undef */
+
   const args = process.argv.slice(2)
 
   const inputObject = args.reduce((list, item) => {
-    const separatorIndex = item.indexOf("=")
+    const separatorIndex = item.indexOf('=')
     const key = separatorIndex >= 0 ? item.slice(0, separatorIndex) : item
     const value = separatorIndex >= 0 ? item.slice(separatorIndex + 1) : undefined
 

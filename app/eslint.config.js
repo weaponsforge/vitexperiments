@@ -99,7 +99,17 @@ export default defineConfig([
               position: 'before',
             },
             {
-              pattern: '@/hooks/**',
+              pattern: '@/lib/services/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/lib/hooks/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '@/lib/store/**',
               group: 'internal',
               position: 'after',
             },

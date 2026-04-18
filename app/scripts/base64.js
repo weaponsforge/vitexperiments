@@ -1,7 +1,7 @@
-import { open } from "node:fs/promises"
-import { pipeline } from "node:stream/promises"
+import { open } from 'node:fs/promises'
+import { pipeline } from 'node:stream/promises'
 
-import { getargs } from "./getargs.js"
+import { getargs } from './getargs.js'
 
 /**
  * Converts an input file to base64 format.
@@ -17,29 +17,29 @@ const main = async () => {
 
   try {
     const args = getargs({
-      params: ["input", "output"]
+      params: ['input', 'output'],
     })
 
     const { input: inputFile, output: outputFilePath } = args
 
     // File handles
     readHandle = await open(inputFile)
-    writeHandle = await open(outputFilePath, "w")
+    writeHandle = await open(outputFilePath, 'w')
 
     // Streams
-    const readable = readHandle.createReadStream({ encoding: "base64" })
+    const readable = readHandle.createReadStream({ encoding: 'base64' })
     const writeable = writeHandle.createWriteStream()
 
     // Write converted base64 to file
     await pipeline(readable, writeable)
   } catch (err) {
     console.error(`[ERROR]: ${err.message}`)
-    /* eslint-disable no-undef */
+
     process.exitCode = 1
   } finally {
     await Promise.allSettled([
       readHandle.close(),
-      writeHandle.close()
+      writeHandle.close(),
     ])
   }
 }

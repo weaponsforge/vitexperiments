@@ -1,5 +1,6 @@
-import Section from "@/components/layout/Section"
-import useHome from "./hooks/useHome"
+import Section from '@/components/layout/Section'
+
+import useHome from './hooks/useHome'
 
 const Home = () => {
   const { data, error, isLoading } = useHome()

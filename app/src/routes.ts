@@ -1,12 +1,12 @@
-import { ComponentType } from "react"
+import { ComponentType } from 'react'
 
 import {
   About,
   Contact,
   FullPicture,
   Home,
-  Login
-} from "@/features"
+  Login,
+} from '@/features'
 
 type RouteItem = {
   /** Route path */
@@ -23,40 +23,40 @@ type RouteItem = {
 
 const routes: RouteItem[] = [
   {
-    path: "/about",
-    name: "About",
-    color: "from-teal-100 to-cyan-200",
+    path: '/about',
+    name: 'About',
+    color: 'from-teal-100 to-cyan-200',
     isNavVisible: true,
-    component: About
+    component: About,
   },
   {
-    path: "/contact",
-    name: "Contact",
-    color: "from-amber-100 to-orange-200",
+    path: '/contact',
+    name: 'Contact',
+    color: 'from-amber-100 to-orange-200',
     isNavVisible: true,
-    component: Contact
+    component: Contact,
   },
   {
-    path: "/full",
-    name: "Full Picture",
-    color: "from-orange-100 to-red-200",
+    path: '/full',
+    name: 'Full Picture',
+    color: 'from-orange-100 to-red-200',
     isNavVisible: false,
-    component: FullPicture
+    component: FullPicture,
   },
   {
-    path: "/login",
-    name: "Login",
-    color: "from-blue-100 to-indigo-200",
+    path: '/login',
+    name: 'Login',
+    color: 'from-blue-100 to-indigo-200',
     isNavVisible: true,
-    component: Login
+    component: Login,
   },
   {
-    path: "/",
-    name: "Home",
-    color: "from-purple-100 to-pink-200",
+    path: '/',
+    name: 'Home',
+    color: 'from-purple-100 to-pink-200',
     isNavVisible: true,
-    component: Home
-  }
+    component: Home,
+  },
 ]
 
 export default routes

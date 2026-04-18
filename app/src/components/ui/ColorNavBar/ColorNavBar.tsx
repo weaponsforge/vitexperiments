@@ -1,8 +1,6 @@
+import useColorNavBar from '@/lib/hooks/useColorNavbar'
 
-
-
-import CNavBarItem from "./CNavBarItem"
-import useColorNavBar from "@/lib/hooks/useColorNavbar"
+import CNavBarItem from './CNavBarItem'
 
 const ColorNavBar = () => {
   const { routes, selectedItem, containerStyles } = useColorNavBar()
@@ -11,16 +9,18 @@ const ColorNavBar = () => {
     const isSelected = route.name === selectedItem
 
     const navItem = route?.isNavVisible
-      ? <CNavBarItem
-        key={id}
-        isSelected={isSelected}
-        route={route?.path}
-        label={route?.name}
-      />
+      ? (
+        <CNavBarItem
+          key={id}
+          isSelected={isSelected}
+          route={route?.path}
+          label={route?.name}
+        />
+      )
       : null
 
     return navItem
-  }
+  },
   )
 
   return (
