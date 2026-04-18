@@ -3,7 +3,7 @@ import useSWR from 'swr'
 import { type Mock } from 'vitest'
 
 import useHome from './useHome'
-import { ERROR_PARSING_HOME_DATA, IUseHomeReturn } from './useHome'
+import { ERROR_PARSING_HOME_DATA, type IUseHomeReturn } from './useHome'
 
 interface IUseHomeMock extends IUseHomeReturn {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

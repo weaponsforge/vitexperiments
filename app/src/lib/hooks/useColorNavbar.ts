@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
-
 import routes from '@/routes'
 
 const defaultColorBg = 'purple-100'

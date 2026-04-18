@@ -99,6 +99,16 @@ export default defineConfig([
               position: 'before',
             },
             {
+              pattern: '@/hooks/**',
+              group: 'internal',
+              position: 'before',
+            },
+            {
+              pattern: '@/services/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
               pattern: '@/lib/services/**',
               group: 'internal',
               position: 'after',
@@ -114,16 +124,12 @@ export default defineConfig([
               position: 'after',
             },
             {
-              pattern: '@/lib/**',
-              group: 'internal',
-              position: 'after',
-            },
-            {
               pattern: '@/**',
               group: 'internal',
               position: 'after',
             },
           ],
+          distinctGroup: true,
           pathGroupsExcludedImportTypes: ['react'],
           'newlines-between': 'always',
           alphabetize: {

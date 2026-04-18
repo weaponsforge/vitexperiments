@@ -4,7 +4,7 @@ import Home from './Home'
 import { IUseHomeReturn } from './hooks/useHome'
 import * as useHomeModule from './hooks/useHome'
 
-vi.mock('../hooks/useHome')
+vi.mock('./hooks/useHome')
 
 afterEach(() => {
   vi.clearAllMocks()
