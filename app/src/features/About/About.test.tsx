@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react"
-import About from "./About"
+import { render, screen } from '@testing-library/react'
 
-describe("About component", () => {
-  it("renders About title", () => {
+import About from './About'
+
+describe('About component', () => {
+  it('renders About title', () => {
     render(<About />)
-    expect(screen.getByRole("heading", { name: /about/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument()
   })
 })

@@ -1,10 +1,11 @@
-import useSWR from "swr"
+import useSWR from 'swr'
 
-import { fetchPlaceholderText } from "@/lib/services/placeholder"
-import { HomeDataSchema } from "../schemas/Home.schema"
-import { PLACEHOLDER_TEXT } from "@/lib/services/apiRoutes"
+import { PLACEHOLDER_TEXT } from '@/lib/services/apiRoutes'
+import { fetchPlaceholderText } from '@/lib/services/placeholder'
 
-export const ERROR_PARSING_HOME_DATA = "Error parsing data"
+import { HomeDataSchema } from '../schemas/Home.schema'
+
+export const ERROR_PARSING_HOME_DATA = 'Error parsing data'
 
 /** Describes the return object shape of `useHome()` */
 export interface IUseHomeReturn {
@@ -25,7 +26,7 @@ const useHome = (): IUseHomeReturn => {
   return {
     data: result.success ? result.data : [],
     error: hasError ? ERROR_PARSING_HOME_DATA : null,
-    isLoading
+    isLoading,
   }
 }
 

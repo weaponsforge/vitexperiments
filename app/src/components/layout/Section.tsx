@@ -1,5 +1,6 @@
-import { ReactNode } from "react"
-import { cn } from "@/lib/utils"
+import { type ReactNode } from 'react'
+
+import { cn } from '@/lib/utils'
 
 interface ISection {
   /** Custom tailwind classes to append to the default container classes */
@@ -10,8 +11,8 @@ interface ISection {
 
 const Section = (props: ISection) => {
   const stylesSection = cn(
-    "max-w-screen-lg min-h-75 w-full p-4 mx-auto text-justify border-0 lg:border lg:border-stone-200 rounded-xl",
-    props?.className
+    'max-w-screen-lg min-h-75 w-full p-4 mx-auto text-justify border-0 lg:border lg:border-stone-200 rounded-xl',
+    props?.className,
   )
 
   return (

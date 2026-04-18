@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import FullPage from "@/components/layout/FullPage"
-import NotFound from "@/components/ui/NotFound"
-import routes from "@/routes"
+import FullPage from '@/components/layout/FullPage'
+import NotFound from '@/components/ui/NotFound'
 
-const VITE_PUBLIC_BASE_PATH = import.meta.env.VITE_PUBLIC_BASE_PATH || ""
+import routes from '@/routes'
+
+const VITE_PUBLIC_BASE_PATH = import.meta.env.VITE_PUBLIC_BASE_PATH || ''
 
 const App = () => {
   const pagesWithNavBar = routes.map((route, id: number) => {
