@@ -1,6 +1,6 @@
 ## vitexperiments
 
-This repository contains a simple React frontend application built with [⚡Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
+This repository contains a simple React frontend application built with ⚡[Vite](https://vite.dev/). It serves as a personal reference for client-side React coding patterns and conventions, particularly for projects that use **React Router**.
 
 The folder structure, setup, and general coding style reflect how I like to [organize TypeScript React apps](/docs/CODING_STYLE.md) built with Vite, or for any React projects that use **React Router** for routing (including the retired [🪦Create-React-App](https://create-react-app.dev/docs/getting-started/) (CRA)).
 

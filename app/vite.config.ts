@@ -39,11 +39,14 @@ export default defineConfig({
       provider: 'v8',
       enabled: true,
       reportsDirectory: './html/coverage',
-      include: ['src'],
+      include: [
+        'src/**/*.ts',
+        'src/**/*.tsx',
+      ],
       exclude: [
         'node_modules/',
         'dist/',
-        'html/'
+        'html/',
       ]
     }
   },
