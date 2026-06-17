@@ -130,14 +130,14 @@ Organizes self-contained features of the app. Each subfolder represents a comple
       Only import feature entry components from the top-level `@/features` path.
       ```typescript
       ✅ import { About, Contact } from "@/features"
-      ❌ import About from "@/features/About/About"
-      ❌ import About from "../../features/About/About"
+      ❌ import About from "@/features/about/About"
+      ❌ import About from "../../features/about/About"
       ```
    - **🔒 From inside the `/features` folder**<br>
       Use relative imports when referencing other components, either within the same feature or across features.
       ```typescript
       ❌ import { About, Contact } from "@/features"
-      ✅ import About from "../About/About"
+      ✅ import About from "../About/about"
        ```
 
 #### 📂 src/styles
@@ -159,7 +159,8 @@ Contains generic custom CSS definitions used by the whole app.
 - Use **`LF` (Line Feed)** as the line ending format for all code and other files to ensure consistency across environments and platforms.
 - Use **arrow functions** instead of traditional function declarations when defining functions and methods. Only use `function()` definitions for specific cases.
 - Follow **camelCase** for naming variables, files, functions/methods and non-component folders.
-- Follow **PascalCase** for naming **Zod** schemas, TypeScript `types`, `interfaces`, `enums` and other TypeScript constructs.
+- Follow **camelCase** for naming React component folders.
+- Follow **PascalCase** for naming **Zod** schemas, **React** components `.tsx`, **TypeScript** `types`, `interfaces`, `enums` and other TypeScript constructs.
 - Follow consistent file naming conventions based on content:
    - Use `*.schema.ts` for files containing Zod schemas.
    - Use `*.enum.ts` for files containing only enums.

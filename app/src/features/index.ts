@@ -1,8 +1,8 @@
-import About from './About/About'
-import Login from './Auth/Login'
-import Contact from './Contact/Contact'
-import FullPicture from './FullPicture/FullPicture'
-import Home from './Home/Home'
+import About from './about/About'
+import Login from './auth/Login'
+import Contact from './contact/Contact'
+import FullPicture from './fullPicture/FullPicture'
+import Home from './home/Home'
 
 export {
   About,
