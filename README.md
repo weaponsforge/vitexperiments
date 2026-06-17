@@ -58,12 +58,12 @@ We welcome contributions! Please see [CONTRIBUTING.md](/CONTRIBUTING.md) and the
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Vite](https://www.npmjs.com/package/vite) | `v8.0.8` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
-| [React](https://www.npmjs.com/package/react) | `v19.2.5` | Library for creating reusable/composable and interactive components |
-| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.14.1` | Manages client-side routing for general React apps |
+| [Vite](https://www.npmjs.com/package/vite) | `v8.0.16` | Frontend build tool for scaffolding the React app, running it in development mode and bundling the static website output |
+| [React](https://www.npmjs.com/package/react) | `v19.2.7` | Library for creating reusable/composable and interactive components |
+| [react-router-dom](https://www.npmjs.com/package/react-router-dom) | `v7.18.0` | Manages client-side routing for general React apps |
 | [TypeScript](https://www.npmjs.com/package/typescript) | `v6.0.3` | For creating type definitions |
-| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.2.2` | Generic, composable utility classes for CSS styling |
-| [Vitest](https://www.npmjs.com/package/vitest) | `v4.1.4` | Testing framework powered by Vite |
+| [Tailwind CSS](https://www.npmjs.com/package/tailwindcss) | `v4.3.1` | Generic, composable utility classes for CSS styling |
+| [Vitest](https://www.npmjs.com/package/vitest) | `v4.1.9` | Testing framework powered by Vite |
 
 #### CSS Styling
 
@@ -72,29 +72,29 @@ Styling with Tailwind CSS
 | Library | Version | Description |
 | --- | --- | --- |
 | [clsx](https://www.npmjs.com/package/clsx) | `v2.1.1` | Utility for constructing class name strings conditionally
-| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.5.0` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
+| [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) | `v3.6.0` | Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts.
 | [tw-animate-css](https://www.npmjs.com/package/tw-animate-css) | `v1.4.0` | A pure CSS solution for adding animation capabilities using the new Tailwind v4 CSS-first approach
 
 #### Code Linting
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [ESlint](https://www.npmjs.com/package/eslint) | `v10.2.1` | Enforces coding formats, rules and preferences |
+| [ESlint](https://www.npmjs.com/package/eslint) | `v9.39.4` | Enforces coding formats, rules and preferences |
 
 #### Data Fetching
 
 | Library | Version | Description |
 | --- | --- | --- |
 | [SWR](https://www.npmjs.com/package/swr) | `v2.4.1` | React hooks library for data fetching that provides `isLoading`, `error` and fetched data states
-| [Axios](https://www.npmjs.com/package/axios) | `v1.15.0` | Promise-based HTTP data fetching library |
+| [Axios](https://www.npmjs.com/package/axios) | `v1.18.0` | Promise-based HTTP data fetching library |
 
 #### State and Data Management
 
 | Library | Version | Description |
 | --- | --- | --- |
-| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.12` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
-| [Zod](https://www.npmjs.com/package/zod) | `v4.3.6` | Scalable Typescript-first data validation using schemas
-| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.72.1` | React hooks for managing form submission data validation |
+| [Zustand](https://www.npmjs.com/package/zustand) | `v5.0.14` | Minimal (no boilerplates), fast, scalable and reactive state management library that uses a pub/sub mechanism instead of React context to manage state and trigger re-renders.
+| [Zod](https://www.npmjs.com/package/zod) | `v4.4.3` | Scalable Typescript-first data validation using schemas
+| [React Hook Form](https://www.npmjs.com/package/react-hook-form) | `v7.79.0` | React hooks for managing form submission data validation |
 
 
 </details>
