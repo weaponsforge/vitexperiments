@@ -31,7 +31,7 @@
   "include": ["src"],
   "exclude": [
     "dist",
-    "html",
+    ".vitest",
     "node_modules"
   ]
 }

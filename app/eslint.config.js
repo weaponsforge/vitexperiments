@@ -11,8 +11,8 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default defineConfig([
   globalIgnores([
+    '.vitest',
     'dist',
-    'html',
     'node_modules/**'
   ]),
   {
