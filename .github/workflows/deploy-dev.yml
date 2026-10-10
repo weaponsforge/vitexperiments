@@ -78,13 +78,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/html/junit.xml
+          path: app/.vitest/junit/output.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: app/html/junit.xml
+          files: app/.vitest/junit/output.xml
           check_name: "Test Results"
 
   deploy-client:
