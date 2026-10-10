@@ -6,7 +6,7 @@ import routes from '@/routes'
 const defaultColorBg = 'purple-100'
 
 /** Manages the `@/components/layout/ui/ColorNavBar` component */
-const useColorNavBar = () => {
+export const useColorNavBar = () => {
   const location = useLocation()
   const activeRoute = routes.find(item => item.path === location.pathname)
   const shouldHideNav = !activeRoute?.isNavVisible
@@ -25,5 +25,3 @@ const useColorNavBar = () => {
     containerStyles,
   }
 }
-
-export default useColorNavBar

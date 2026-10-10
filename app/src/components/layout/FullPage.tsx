@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom'
 
-import ColorNavBar from '@/components/ui/ColorNavBar'
-import Footer from '@/components/ui/Footer'
+import { ColorNavBar } from '@/components/ui/ColorNavBar'
+import { Footer } from '@/components/ui/Footer'
 
-const FullPage = () => {
+export function FullPage () {
   return (
     <div className="min-h-screen flex flex-col">
       <ColorNavBar />
@@ -16,5 +16,3 @@ const FullPage = () => {
     </div>
   )
 }
-
-export default FullPage

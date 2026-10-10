@@ -9,7 +9,7 @@ interface ISection {
   children: ReactNode;
 }
 
-const Section = (props: ISection) => {
+export function Section (props: ISection) {
   const stylesSection = cn(
     'max-w-screen-lg min-h-75 w-full p-4 mx-auto text-justify border-0 lg:border lg:border-stone-200 rounded-xl',
     props?.className,
@@ -21,5 +21,3 @@ const Section = (props: ISection) => {
     </div>
   )
 }
-
-export default Section

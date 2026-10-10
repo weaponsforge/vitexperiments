@@ -1,6 +1,6 @@
-import Section from '@/components/layout/Section'
+import { Section } from '@/components/layout/Section'
 
-const Contact = () => {
+export function Contact () {
   return (
     <Section>
       <h1>Contact</h1>
@@ -12,4 +12,3 @@ const Contact = () => {
   )
 }
 
-export default Contact
