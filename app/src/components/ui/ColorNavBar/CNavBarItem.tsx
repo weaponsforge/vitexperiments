@@ -11,7 +11,7 @@ interface ICNavBarItem {
   label: string;
 }
 
-const CNavBarItem = (props: ICNavBarItem) => {
+export function CNavBarItem (props: ICNavBarItem) {
   const { isSelected = false, label = '', route = '/' } = props
 
   const linkStyle = cn(
@@ -28,5 +28,3 @@ const CNavBarItem = (props: ICNavBarItem) => {
     </Link>
   )
 }
-
-export default CNavBarItem

@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd app
-          npm install
+          npm ci
 
       - name: Lint
         run: |
@@ -33,7 +33,7 @@ jobs:
       - name: Transpile
         run: |
           cd app
-          npx tsc
+          npm run types:check
 
   test-app:
     name: Unit Tests
@@ -56,7 +56,7 @@ jobs:
       - name: Install Dependencies
         run: |
           cd app
-          npm install
+          npm ci
 
       - name: Test
         run: |
@@ -68,11 +68,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: app/html/junit.xml
+          path: app/.vitest/junit/output.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: app/html/junit.xml
+          files: app/.vitest/junit/output.xml
           check_name: "Test Results"

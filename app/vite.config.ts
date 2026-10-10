@@ -32,13 +32,10 @@ export default defineConfig({
     include: ['**/*.test.tsx'],
     setupFiles: './src/lib/config/setupTests.ts',
     reporters: ['verbose', 'html', 'junit'],
-    outputFile: {
-      junit: './html/junit.xml'
-    },
     coverage: {
       provider: 'v8',
       enabled: true,
-      reportsDirectory: './html/coverage',
+      reportsDirectory: '.vitest/coverage',
       include: [
         'src/**/*.ts',
         'src/**/*.tsx',

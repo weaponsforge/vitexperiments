@@ -261,6 +261,10 @@ Lints TypeScript source codes and checks for linting errors.
 
 Fixes lint errors.
 
+### `npm run types:check`
+
+Checks for TypeScript type errors.
+
 ### `npm run preview`
 
 - Displays the React app build output at `http://localhost:4173/`

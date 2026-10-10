@@ -1,6 +1,6 @@
-import Section from '@/components/layout/Section'
+import { Section } from '@/components/layout/Section'
 
-const About = () => {
+export function About () {
   return (
     <Section>
       <h1>About</h1>
@@ -11,5 +11,3 @@ const About = () => {
     </Section>
   )
 }
-
-export default About

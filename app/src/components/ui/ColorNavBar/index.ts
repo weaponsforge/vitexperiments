@@ -1,3 +1,1 @@
-import ColorNavBar from './ColorNavBar'
-
-export default ColorNavBar
+export { ColorNavBar } from './ColorNavBar'

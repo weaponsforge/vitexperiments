@@ -1,6 +1,6 @@
-import Section from '@/components/layout/Section'
+import { Section } from '@/components/layout/Section'
 
-const Border = () => {
+export function Login () {
   return (
     <Section>
       <h1>Login</h1>
@@ -12,4 +12,3 @@ const Border = () => {
   )
 }
 
-export default Border
