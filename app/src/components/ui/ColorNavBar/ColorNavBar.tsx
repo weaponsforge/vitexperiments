@@ -1,8 +1,8 @@
-import useColorNavBar from '@/lib/hooks/useColorNavbar'
+import { useColorNavBar } from '@/lib/hooks/useColorNavbar'
 
-import CNavBarItem from './CNavBarItem'
+import { CNavBarItem } from './CNavBarItem'
 
-const ColorNavBar = () => {
+export function ColorNavBar () {
   const { routes, selectedItem, containerStyles } = useColorNavBar()
 
   const navItems = routes.map((route, id) => {
@@ -31,5 +31,3 @@ const ColorNavBar = () => {
     </div>
   )
 }
-
-export default ColorNavBar

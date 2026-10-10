@@ -1,8 +1,8 @@
-import Section from '@/components/layout/Section'
+import { Section } from '@/components/layout/Section'
 
 import useHome from './hooks/useHome'
 
-const Home = () => {
+export function Home () {
   const { data, error, isLoading } = useHome()
 
   const content = isLoading
@@ -25,5 +25,3 @@ const Home = () => {
     </Section>
   )
 }
-
-export default Home

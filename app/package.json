@@ -12,6 +12,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint src scripts",
     "lint:fix": "eslint src scripts --fix",
+    "types:check": "tsc -b --noEmit",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -1,13 +1,5 @@
-import About from './about/About'
-import Login from './auth/Login'
-import Contact from './contact/Contact'
-import FullPicture from './fullPicture/FullPicture'
-import Home from './home/Home'
-
-export {
-  About,
-  Contact,
-  FullPicture,
-  Home,
-  Login,
-}
+export { About } from './about/About'
+export { Login } from './auth/Login'
+export { Contact } from './contact/Contact'
+export { FullPicture } from './fullPicture/FullPicture'
+export { Home } from './home/Home'
